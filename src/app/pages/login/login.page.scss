@@ -1,0 +1,96 @@
+.start-logo{
+    max-width: 160px;
+    margin-bottom: 20px;
+}
+
+.button-h{
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold !important;
+    margin: 0 !important;
+    margin-top: 10px !important;
+    text-transform: uppercase !important;
+	letter-spacing: 1px;
+	background: #fff;
+    --background: #fff;
+    color: #dfa5a4;
+    border-radius: 50px;
+    --border-radius: 50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-shadow: none;
+}
+
+.go-to-restpass
+{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  text-transform: uppercase !important;
+}
+
+.go-to-restpass a
+{
+  color: #ffffff;
+}
+
+.line-input {
+    margin-bottom: 0!important;
+    ion-item {
+       --border-color: transparent!important;
+		--background-activated: transparent;
+		--background-focused: transparent;
+		--background-hover: transparent;
+		--highlight-height: 0;
+		border: 1px solid #ffffff;
+		border-radius: 50px;
+		background: transparent;
+		--background: transparent;
+		color: #fff;
+
+        &.item-has-focus {
+            border: 1px solid #fff;
+        }
+
+        ion-label {
+            color: #807e7e!important;
+            font-weight: 300;
+            font-size: 14px!important;
+        }
+
+        ion-icon{
+            color: #fff !important;
+            margin-right: 8px !important;
+        }
+		ion-input:focus, ion-input:active {
+			background: transparent;
+			--background: transparent;
+		} 
+    }
+}
+
+.sc-ion-input-ios-h{
+	font-size: 14px !important;
+	color: #fff;
+    --placeholder-color: #fff;
+    --placeholder-opacity: 0.7;
+	background: transparent;
+    --background: transparent;
+}
+.bg-cstr {
+	background: #dfa5a4;
+	--background: #dfa5a4;
+}
+.flst-str  {
+	ion-list {
+		background: transparent;
+		--background: transparent;
+	}
+}
+
+.error {
+    display: block;
+    margin-top: 4px;
+    color: #7890b6;
+    font-size: 15px;
+}

@@ -1,0 +1,72 @@
+<ion-header class="darkheader" mode="ios" no-border>
+  <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+          <app-backbutton color="light"></app-backbutton>
+      </ion-buttons>
+      <ion-buttons slot="end" style="display: none;">
+              <ion-button (click)="addToFavorites()" slot="start">
+                <ion-icon color="light" mode="md" [name]="icon"></ion-icon>
+              </ion-button>
+              <ion-button (click)="presentModal()" slot="start">
+                <ion-icon color="light" mode="md" name="information-circle-outline"></ion-icon>
+              </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+
+    <app-loading *ngIf="isLoading"></app-loading>
+
+    <ion-grid class="ion-no-padding">
+        <ion-row class="header-bg" [style.background-image]="'url(' + (workout.workout_image | image) + ')'" [ngStyle]="{'height': innerHeight}">
+          <div class="text">
+          <p class="name">{{workout.workout_title}}</p>
+          <!-- <p class="time">{{workout.workout_duration}}</p> -->
+        </div>
+        </ion-row>
+        <ion-row class="cols">
+          <ion-col size="6" class="ion-text-center">
+            <p class="text">{{strings.ST16}}</p>
+            <p class="value">{{workout.goal_title}}</p>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+              <p class="text">{{strings.ST17}}</p>
+              <p class="value">{{workout.level_title}}</p>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="days">
+
+      <div *ngFor="let item of days let i = index">
+        <div class="tags" [routerLink]="['/weday', workout.workout_id, i+1]" *ngIf="i < 5">
+          <ng-container *ngIf="workout.workout_goal == 1 && i < 5">
+            <!-- {{strings.ST87}} {{i+1}} -->
+            <h1 *ngIf="i == 0"> Legs & Glutes</h1>
+            <h1 *ngIf="i == 1"> Upper Body</h1>
+            <h1 *ngIf="i == 2"> Full Body</h1>
+            <h1 *ngIf="i == 3"> Upper Body</h1>
+            <h1 *ngIf="i == 4"> Legs & Glutes</h1>
+            <ion-icon name="arrow-forward" color="primary" slot="end"></ion-icon>
+          </ng-container>
+          <ng-container *ngIf="workout.workout_goal == 2 && i < 5">
+            <!-- <h1>{{strings.ST87}} {{i+1}}</h1> -->
+            <h1 *ngIf="i == 0">Legs</h1>
+            <h1 *ngIf="i == 1">Push Day</h1>
+            <h1 *ngIf="i == 2">Glutes</h1>
+            <h1 *ngIf="i == 3">Pull Day</h1>
+            <h1 *ngIf="i == 4">Full Body HIIT</h1>
+            <ion-icon name="arrow-forward" color="primary" slot="end"></ion-icon>
+          </ng-container>
+
+          <ng-container *ngIf="workout.workout_goal != 2 && workout.workout_goal != 1">
+            <h1>{{strings.ST87}} {{i+1}}</h1>
+            <ion-icon name="arrow-forward" color="primary" slot="end"></ion-icon>
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+
+</ion-content>

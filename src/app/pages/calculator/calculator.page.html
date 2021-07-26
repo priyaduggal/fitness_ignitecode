@@ -1,0 +1,150 @@
+<ion-header mode="ios" no-border>
+    <ion-toolbar mode="ios">
+        <ion-title class="ion-text-capitalize">
+            {{strings.ST105}}
+          </ion-title>
+        <ion-buttons slot="start">
+            <app-backbutton></app-backbutton>
+        </ion-buttons>
+        <ion-buttons slot="end" style="display: none;">
+          <ion-icon mode="md" name="md-information-circle-outline" [routerLink]="'/bmiinfo'" slot="end">
+          </ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-no-padding">
+
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <!-- <ion-col size="12" class="col1" [ngStyle]="{'background-color': color}">
+
+        <div class="image">
+          <img [src]="icon">
+        </div>
+
+        <p class="name">{{resultText}}</p>
+
+          <div class="circle">
+              <p class="number">{{resultNumber}}</p>
+              <p class="text">BMI</p>
+          </div>
+
+      </ion-col> -->
+      <ion-col size="12" class="col2">
+
+        <div class="inputs">
+          <ion-list class="line-input" mode="md"> 
+            <label class="item item-input item-select nes-syr">
+              <div class="input-label">
+               Age in Years
+              </div>
+              </label>
+            <ion-item mode="md">
+              <ion-input class="ion-text-center" maxlength="3" minlength="3" placeholder="Age" [(ngModel)]="age" type="number" min="0"></ion-input>
+            </ion-item> 
+          </ion-list>
+
+          <ion-list class="line-input" mode="md"> 
+            <label class="item item-input item-select nes-syr">
+              <div class="input-label">
+               Height in CM
+              </div>
+              </label>
+              <ion-item mode="md">
+                <ion-input class="ion-text-center" maxlength="3" minlength="3" [placeholder]="strings.ST136" [(ngModel)]="height" type="number" min="0"></ion-input>
+              </ion-item> 
+            </ion-list>
+
+            <ion-list class="line-input" mode="md"> 
+              <label class="item item-input item-select nes-syr">
+                <div class="input-label">
+                 Weight in KG
+                </div>
+                </label>
+                <ion-item mode="md">
+                  <ion-input class="ion-text-center" maxlength="3" minlength="2" [placeholder]="strings.ST137" [(ngModel)]="weight" type="number" min="0"></ion-input>
+                </ion-item> 
+              </ion-list>
+
+            <ion-list class="line-input" mode="md"> 
+              <ion-item mode="md">
+              <label class="item item-input item-select nes-syr">
+                <div class="input-label">
+                 Gender
+                </div>
+            
+               <ion-select name="" id="user_sex" [(ngModel)]="sex">   
+                  <ion-select-option value="">Select</ion-select-option>
+                  <ion-select-option value="male">Male</ion-select-option>
+                  <ion-select-option value="female">Female</ion-select-option>
+              </ion-select>
+              </label>
+              </ion-item>
+              </ion-list>
+            
+              <ion-list class="line-input" mode="md"> 
+                <ion-item mode="md">    
+            <label class="item item-input item-select nes-syr">
+                <div class="input-label">
+                Activity level
+                </div>
+                
+                <ion-select name="" id="" [(ngModel)]="activityLevel" (change)="updateNutrition()">
+                    <ion-select-option value="">Select</ion-select-option>
+                    <ion-select-option value="1">Sedentary - Little or no exercise</ion-select-option>
+                    <ion-select-option value="1.375">Moderatetely - 3-5 Times/Week</ion-select-option>
+                    <ion-select-option value="1.725">Very - 6-7 Times/Week</ion-select-option>
+                    <ion-select-option value="1.9">Extra - 1-2 Times/Day</ion-select-option>
+                    <!-- <ion-select-option *ngFor="let activityLevel in activityLevels" value="activityLevel.value">{{activityLevel.title}}</ion-select-option> -->
+                </ion-select>
+            </label>
+            </ion-item>
+            </ion-list>
+
+              <ion-button mode="ios" (click)="MetricCalculate()" type="submit" color="dark" fill="solid" size="default" shape="round" expand="block">
+                  {{strings.ST138}}
+              </ion-button>
+
+              <!-- <p class="footertext">{{strings.ST139}}</p> -->
+
+          </div>
+
+
+        <div class="padding">
+            <h4>Your BMR is: <span class="assertive nrx">{{meta}}</span></h4>
+        </div>
+        <div class="padding">
+          <table class="ui unstackable table">
+              <thead>
+                  <th>Table</th>
+                    <th class="left aligned" *ngFor="let goal of goals">{{goal?.title}}</th>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td class="left aligned">Calories:</td>
+                      <td *ngFor="let goal of goals" >{{goal?.calories.toFixed(0) | number:0}}</td>
+                  </tr>
+                  <tr class="left aligned">   
+                      <td>Protein:</td>
+                      <td *ngFor="let goal of goals" >{{goal?.protein.toFixed(0) | number:0}}</td>
+                  </tr>
+                  <tr class="left aligned">
+                      <td>Fats:</td>
+                      <td *ngFor="let goal of goals">{{goal?.fats.toFixed(0) | number:0}}</td>
+                  </tr>
+                  <tr class="left aligned">
+                      <td>Carbs:</td>
+                      <td *ngFor="let goal of goals">{{goal?.carbs.toFixed(0) | number:0}}</td>
+                  </tr>
+              </tbody>
+          </table>
+        <h5 class="ttl-ss"><span class="assertive"><b>A</b></span> To maintain current weight</h5>
+        <h5 class="ttl-ss"><span class="assertive"><b>B</b></span> To lose weight</h5>
+        <h5 class="ttl-ss"><span class="assertive"><b>C</b></span> To gain weight</h5>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-content fixed class="dark">
+
+<ion-grid fixed class="grid-bg">
+
+  <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%;">
+    <ion-col size="11" class="ion-text-center">
+      <img src="./assets/images/logo-white2.png" class="start-logo"/>
+
+      <ion-button class="button-h start-button btns-trrg" mode="ios" (click)="goLoginPage()"  fill="solid" size="default" shape="round" expand="block">
+        {{strings.ST26}}
+      </ion-button>
+
+      <ion-button class="button-h margin-h start-button btns-otres" (click)="goSignUpPage()" mode="ios"  fill="outline" size="default" shape="round" expand="block">
+        {{strings.ST27}}
+      </ion-button>
+
+      <!--ion-button (click)="tryFacebookLogin()" mode="ios" class="button-h color-facebook start-button" color="light" fill="solid" size="default" shape="round" expand="block">
+        <ion-icon class="color-facebook" slot="start" name="logo-facebook"></ion-icon>
+        <ion-label class="color-facebook">{{strings.ST104}}</ion-label>
+      </ion-button-->
+
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+
+</ion-content>

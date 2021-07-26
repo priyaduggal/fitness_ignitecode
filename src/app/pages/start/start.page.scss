@@ -1,0 +1,65 @@
+
+.grid-bg{
+    height: 100%;
+    background-image: url('../../../assets/images/fit2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+	position:relative;
+	z-index:0;
+	&:after {
+		content: "";
+		position: absolute;
+		background: linear-gradient(to bottom, #6486bb , #7890b6 ,#dfa5a4);
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+		opacity:1;
+		background: #dfa5a4;
+	}
+}
+
+.start-logo{
+    max-width: 160px;
+    margin-bottom: 20px;
+}
+
+.margin-h{
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.button-h{
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold !important;
+	letter-spacing: 1px;
+}
+
+.color-facebook{
+    color: #3b5998 !important;
+}
+ion-button.button-h.start-button.btns-trrg {
+    background: #fff;
+    --background: #fff;
+    color: #dfa5a4;
+    border-radius: 50px;
+    --border-radius: 50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-shadow: none;
+}
+ion-button.button-h.margin-h.start-button.btns-otres {
+    color: #ffffff;
+    border-radius: 50px;
+    --border-radius: 50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-shadow: none;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.05);
+    --border-color: #fff;
+    margin-top: 20px !important;
+}

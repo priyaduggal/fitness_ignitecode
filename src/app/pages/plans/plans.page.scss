@@ -1,0 +1,410 @@
+ion-header
+{
+    ion-toolbar
+	{
+	    ion-buttons
+		{
+		    a
+			{
+			    font-size:22px;
+				color:#fff;
+			}
+		}
+		[credit-content]
+		{
+		    text-align:center;
+			font-size:12px;
+			font-weight: 500;
+		}
+	}
+}
+
+ion-content[bg-grey] {
+	.content-str {
+		position: relative;
+		z-index: 0;
+		background: #faf7f7;
+		min-height: 100%;
+		padding: 75px 20px 10px 20px;
+		&:after {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			background: #dfa5a4;
+			width: 40%;
+			content: "";
+			z-index: -1;
+		}
+	}
+	.sticker-slider
+	{
+        padding: 18px 0px 7px;	
+        .sticker-sec
+		{
+			//background: url('../../assets/imgs/influ-bg.png'); 
+			border-radius: 12px;
+			padding: 10px;
+            [stiker-head]
+            {
+			    text-align: center;
+			    h4
+				{
+					margin: 0px 0px 11px;
+					font-size: 16px;
+					position: relative;
+					z-index: 1;
+					color:#fff;
+					padding: 3px 0px 0px 12px;	
+					&:before {
+						position: absolute;
+						content: "";
+						top: 0px;
+						left: 0px;
+						right:0px;
+						margin:0px auto;
+						width: 25px;
+						height: 25px;
+						background: #038b5a;
+						z-index: -1;
+						border-radius: 50%;
+						opacity: 0.2;
+					}					
+				}
+			}			
+		    [stiker-img]
+			{
+				background: #f3f3f3;
+				border-radius: 12px;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+                img
+                {
+					max-height: 40px;
+					min-height: 40px;
+					object-fit: contain;
+				}				
+			}
+		}
+	}
+	.sticker-Featured
+	{
+        padding: 12px 15px 15px;	
+        .sticker-Feat-sec
+		{
+			//background: url('../../assets/imgs/influ-bg.png');
+			border-radius: 12px;
+			padding: 10px;
+            [stiker-Feat-head]
+            {
+			    text-align: center;
+			    h4
+				{
+					margin: 0px 0px 11px;
+					font-size: 16px;
+					position: relative;
+					z-index: 1;
+					color:#fff;
+					padding: 3px 0px 0px 12px;	
+					&:before {
+						position: absolute;
+						content: "";
+						top: 0px;
+						left: 0px;
+						right:0px;
+						margin:0px auto;
+						width: 25px;
+						height: 25px;
+						background: transparent;
+						z-index: -1;
+						border-radius: 50%;
+						opacity: 0.2;
+					}					
+				}
+				p
+				{
+					margin: 0px;
+					font-size: 13px;
+					color: #fff;				
+				}
+			}			
+		    [stiker-Feat-img]
+			{
+				background: #f3f3f3;
+				border-radius: 12px;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+                img
+                {
+					max-height: 40px;
+					min-height: 40px;
+					object-fit: contain;
+				}				
+			}
+		}
+	}	
+	.chosn-plan {
+		position: relative;
+		background: #fff;
+		padding: 18px 15px;
+		border-radius: 10px;
+		box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.02);
+		z-index: 0;
+		text-align: center;
+		    min-height: 122px;
+		/*span.ics-pr {
+			position: absolute;
+			bottom: -10px;
+			right: -17px;
+			z-index: -1;
+			font-size: 80px;
+			opacity: 0.02;
+		}*/
+		h5 {
+			margin: 0px;
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: #c1c1c1;
+			font-weight: 600;
+		}
+		h3 {
+			font-weight: 600;
+			color: #515151;
+			font-size: 25px;
+			margin: 8px 0;
+		}
+		span.pric-expr {
+			font-size: 10px;
+			background: #222;
+			padding: 3px 10px;
+			display: inline-block;
+			color: #fff;
+			background: linear-gradient(to top, #04bb79 , #038254);
+			border-radius: 50px;
+		}
+		span.pric-expr.sxre {
+			background: linear-gradient(to top, #F44336, #FF9800);
+		}
+	}
+	.top-header-influ {
+		//background:url("../../assets/imgs/influ-bg.png");
+		background-size: cover;
+		min-height: 210px;
+		background-position: center bottom;
+		width: 100%;
+		position: relative;
+		.top-scrin {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 15px 20px;
+			a.menu-tgl {
+				display: inline-block;
+				height: 25px;
+				img {
+					width: 25px;
+				}
+			}
+			span.ttl-new {
+				color: #fff;
+				font-size: 17px;
+				letter-spacing: 0.5px;
+			}
+			a.menu-tgl {
+				color: #fff;
+				font-size: 20px;
+			}
+		}
+	}
+	.cont-top-scho {
+		padding: 10px 10px 50px;
+		.padding-st {
+			padding:0 5px;
+		}
+	}
+	.cont-scti-all {
+		padding: 8px 8px 15px 8px;
+		position: relative;
+		z-index: 0;
+		background: #faf7f7;
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		&:after {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			background: #dfa5a4;
+			width: 40%;
+			content: "";
+			z-index: -1;
+		}
+		.plan-mn-sec
+		{
+			display: block;
+			width: 100%;		
+		}
+		.package-head 
+		{
+			padding: 25px 0px 50px;
+			text-transform: capitalize;
+			h4.package-title 
+			{
+				margin: 0px 0px 0px;
+				text-align: center;
+				font-size: 21px;
+			}		
+		}		
+	}
+	.pricn-box {
+		background:#fff;
+		margin-top: 5px;
+		color: #000;
+		position: relative;
+		display: block;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow:0px 5px 20px rgba(226, 22, 22, 0.08);
+		.top-box-al {
+			//background:url("../../assets/imgs/influ-bg.png");
+				background-size: cover;
+				background-position: center bottom;
+				width: 100%;
+				position: relative;
+				padding: 7px 10px 5px;
+			h5 {
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				color: #000;
+			}
+			h3 {
+				font-size: 20px;
+				font-weight: 600;
+				padding-bottom: 10px;
+				margin-top: 5px;
+				margin-bottom: 0px;
+				span {
+					font-size: 12px;
+					font-weight: 300;
+					letter-spacing: 1px;
+				}
+			}
+		}
+		.featrs {
+			padding: 10px 15px 8px;
+			display: block;
+			width: 100%;
+			ul.list-sctr {
+				padding: 0px;
+				margin: 0px;
+				display: block;
+				list-style: none;
+				text-align: left;
+				li {
+					font-size: 12px;
+					margin-bottom: 7px;
+					color: #7b7b7b;
+					span.icon-is {
+						color:#dfa5a4;
+						vertical-align: middle;
+						margin-right: 5px;
+						font-size: 17px;
+					}
+				}
+			}
+		}
+		.btn-choose {
+			padding-bottom: 20px;
+			a.btn-choosen {
+				display: inline-block;
+				padding: 10px 23px;
+				background: #dfa5a4;
+				color: #fff;
+				font-size: 13px;
+				font-weight: 600;
+				letter-spacing: 1px;
+				border-radius: 50px;
+				text-decoration: none;
+			}
+		}
+			[monthcontent] 
+			{
+				margin: 0px;
+				padding: 0px 4px 22px;
+				font-size: 11px;
+				font-weight: 400;
+				line-height: 17px;
+			}		
+	}
+	.slide {width:100%; display:block; }
+	.mt-25 { margin-top:25px !important;}
+	.getmore-head
+	{
+		font-size: 15px;
+		margin: 0px 0px 15px;
+			&:after {
+				content: "";
+				position: absolute;
+				width: 69px;
+				height: 6px;
+				background: rgba(240, 195, 241, 0.226);
+				left: 1px;
+				bottom: 0px;
+				z-index: -1;
+			}		
+	}
+	.main-box-scrdt  {
+		position: relative;
+		background: #f7f7f7;
+		padding: 8px 6px;
+		border-radius: 10px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+		z-index: 0;
+		margin: 5px 0 10px;
+		width: 100%;
+		border: 1px solid rgba(60, 60, 60, 0.07);
+		overflow: hidden;
+		text-align: left;
+		/*padding-left: 100px;*/
+		span.ics-pr {
+			position: absolute;
+			width: 80px;
+			background: linear-gradient(to top, #bb9b9b, #dfa5a4);
+			left: 0;
+			height: 100%;
+			top: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-size: 36px;
+		}
+		h4  {
+			margin: 0px;
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #5d5d5d;
+			font-weight: 600;
+		}
+		h3 {
+			margin-bottom: 0px;
+			font-size: 15px;
+			font-weight: 600;
+			color: #124430;
+			margin-top: 2px;
+			span {
+				font-size: 14px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+		}
+	}
+}

@@ -1,0 +1,171 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header-->
+<ion-content>
+<ion-header>
+  <ion-toolbar>
+		<ion-back-button slot="start" defaultHref="/my-cards">
+			<ion-icon name="arrow-back-outline"></ion-icon>
+		</ion-back-button>   
+	    <ion-title class="ion-text-center">Add New Card</ion-title>
+  </ion-toolbar>
+</ion-header>
+	<div class="date-cont">	
+			<ion-row>
+				<ion-col size="12">
+					<div class="box-crdits">
+					 
+						<div class="top-cips">
+							<img src="assets/images/chip.png" class="chip-s">
+							<img src="assets/images/visa.png" class="visa-s">
+						</div>
+							<div class="accnt-nusm"> 
+								<span> **** </span>
+								<span> **** </span>
+								<span> **** </span>
+								<span> 1234 </span>
+							</div>						
+						<div class="tst-lta">
+							<p> Name 
+								<span *ngIf="cardForm.value.cardName == ''"> Brice Seraphin </span> 
+								<span *ngIf="cardForm.value.cardName != ''"> {{cardForm.value.cardName}} </span> 
+							</p>
+							<p> Exp Date 
+								<span *ngIf="cardForm.value.expMonth == ''"> 14/20 </span> 
+								<span *ngIf="cardForm.value.expMonth != ''"> {{cardForm.value.expMonth}}/{{cardForm.value.expYear}} </span> 
+							</p>
+						</div>	
+
+					</div>
+				</ion-col>
+			</ion-row>
+			<div card-detail>
+			    <h3> Add Your Details </h3>
+				<p>Start typing to add your card details. Everything will update according to your.</p>
+			</div>
+			<div card-field>
+			<form [formGroup]="cardForm" (ngSubmit)="saveCard(cardForm.value)">
+			<ion-row>
+
+
+				<div *ngIf="validateCard==true">
+						<p style="color:red;">*Not a Valid Card Number</p>
+				</div>
+			
+				<div *ngIf="validateExpMonthYear==true">
+						<p style="color:red;">*Not a Valid Exp. Month Or Year</p>
+				</div>
+
+
+				<ion-col size="12">
+					<ion-item lines="none">
+						<ion-label position="stacked">Card Number</ion-label>
+						<ion-input type="text"  placeholder="Enter Card Number" 
+						formControlName="number" maxlength="16" (keyup)="checkDigit($event)"></ion-input>
+					</ion-item>
+					
+						<div *ngIf="submitted && form.number.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.number.errors.pattern">*Card Number is invalid!</p>
+					</div>
+
+					<div *ngIf="submitted && form.number.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.number.errors.required">*Card Number is required!</p>
+					</div>
+				</ion-col>
+
+
+
+
+				<ion-col size="12">
+					<ion-item lines="none">
+						<ion-label position="stacked">Card Holder Name</ion-label>
+						<ion-input placeholder="Enter Card Holder Name" formControlName="cardName"></ion-input>
+					</ion-item>
+
+					<div *ngIf="submitted && form.cardName.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.cardName.errors.required">*Card Holder Name is required!</p>
+					</div>
+
+				</ion-col>
+
+
+
+
+				<ion-col size="12">
+					<ion-item lines="none">
+						<ion-label position="stacked">Expiry Date</ion-label>
+						<ion-row>
+						<ion-col size="5">
+						<ion-input type="number" placeholder="MM" formControlName="expMonth" maxlength="2"></ion-input> 
+						</ion-col> 
+
+						<ion-col size="2">
+						<ion-label position="stacked">/</ion-label>
+						</ion-col>
+
+						<ion-col size="5">
+						<ion-input type="number" placeholder="YY" formControlName="expYear" maxlength="4"></ion-input>
+						</ion-col>
+						</ion-row>
+					</ion-item>
+
+					<div *ngIf="submitted && form.expMonth.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.expMonth.errors.required">*Month is required!</p>
+					</div>
+			
+					<div *ngIf="submitted && form.expYear.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.expYear.errors.required">*Year is required!</p>
+					</div>
+
+				</ion-col>
+
+
+				<ion-col size="12">
+					<ion-item lines="none">
+						<ion-label position="stacked">CVV</ion-label>
+						<ion-row>
+						<ion-col size="12">
+						<ion-input type="number" placeholder="Enter CVV"  formControlName="cvv" maxlength="4"></ion-input> 
+						</ion-col> 
+
+					
+						</ion-row>
+					</ion-item>
+
+					<div *ngIf="submitted && form.cvv.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.cvv.errors.required">*CVV is required!</p>
+					</div>
+			
+				
+
+				</ion-col>
+
+
+				<!-- <ion-col size="5">
+					<ion-item lines="none">
+						<ion-label position="stacked">CVV</ion-label>
+						<ion-input placeholder="Enter CVV" formControlName="cvv"></ion-input>
+					</ion-item>
+
+					<div *ngIf="submitted && form.cvv.errors" class="invalid-feedback">
+							<p *ngIf="form.cvv.errors.required" class="errors">*CVV is required!</p>
+		
+					</div>
+				</ion-col> -->
+
+
+
+
+				<ion-col size="12">
+					<div submit-btn>
+						<ion-button type="submit" expand="full" shape="round" color="primary">Save Now</ion-button>
+					</div> 
+				</ion-col>
+			</ion-row>
+			</form>
+			</div>
+	</div>
+<img service-mark-icon src="assets/img/service-mark-icon.png" alt="" />	
+</ion-content>

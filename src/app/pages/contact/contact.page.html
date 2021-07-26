@@ -1,0 +1,55 @@
+<ion-header class="lightheader" mode="ios" no-border>
+  <ion-toolbar mode="ios" style="color: #000;">
+    <ion-title class="ion-text-capitalize" style="color: #000;">
+      {{strings.ST73}}
+    </ion-title>
+      <ion-buttons slot="start">
+        <app-backbutton color="dark" ></app-backbutton>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="header-bg" [ngStyle]="{'height': innerHeight}">
+      <div class="text">
+        <ion-icon name="mail" mode="md" color="primary"></ion-icon>
+      <p class="title" style="color: #000;">{{strings.ST77}}</p>
+      <p class="subtitle" style="color: #000;"> {{strings.ST76}}</p>
+    </div>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-padding">
+
+  <form class="form" autocomplete="off" [formGroup]="validationsform" (ngSubmit)="sentMessage(validationsform.value)">
+    <ion-item>
+      <ion-label position="stacked">{{strings.ST78}}</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+      <span class="error" *ngIf="!validationsform.controls.name.hasError('pattern') && validationsform.controls.name.touched && validationsform.controls.name.invalid">Please enter name.</span>
+      <span class="error" *ngIf="validationsform.controls.name.hasError('pattern') && validationsform.controls.name.invalid">Please enter valid name.</span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">{{strings.ST79}}</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+      <span class="error" *ngIf="!validationsform.controls.email.hasError('pattern') && validationsform.controls.email.touched && validationsform.controls.email.invalid">Please enter email address.</span>
+      <span class="error" *ngIf="validationsform.controls.email.hasError('pattern') && validationsform.controls.email.invalid">Please enter valid email address.</span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">{{strings.ST80}}</ion-label>
+      <ion-textarea formControlName="message"></ion-textarea>
+      <span class="error" *ngIf="validationsform.controls.message.touched && validationsform.controls.message.invalid">Please enter message.</span>
+    </ion-item>
+
+    <ion-button type="submit" [disabled]="!validationsform.valid" expand="block" mode="ios">
+      {{strings.ST81}}
+    </ion-button>
+
+  </form>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,115 @@
+<!--ion-header class="ion-no-border heder-main" align-title="center">
+  <ion-toolbar lines="none">
+
+	<ion-buttons slot="start">
+		<a href="javascript:void(0)" class="menu-tgl" (click)='dismiss()'> <ion-icon name="arrow-back-outline"></ion-icon> </a>
+    </ion-buttons>
+    <ion-title class="center">Store</ion-title>
+	
+
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content bg-grey>
+		
+	<!--div class="top-header-influ content-str"-->
+		<!--ion-header class="top-scrin">
+			<a href="javascript:void(0)" class="menu-tgl" (click)='dismiss()'> <ion-icon name="arrow-back-outline"></ion-icon> </a>
+			<span class="ttl-new"> Membership </span>
+			<a href="javascript:void(0)" class="menu-tgl" (click)="logout()"> <ion-icon name="log-out-outline"></ion-icon> </a>
+		</ion-header-->
+		<!--div class="cont-top-scho" >
+			<ion-row>
+				<ion-col size="12" >
+					<div class="padding-st">
+						<div class="chosn-plan">
+							<span *ngIf="paid == false">No membership yet! </span>
+							<span *ngIf="paid == true">Have membership</span>
+							<span>&nbsp;&nbsp;&nbsp;</span>
+							
+						</div>
+					</div>
+				</ion-col>
+				
+			</ion-row>
+		</div-->
+	<!--/div-->
+	<div class="cont-scti-all">
+	<div class="plan-mn-sec">
+		<div class="package-head">
+			<h4 class="package-title">Choose package plan</h4>
+		</div>
+		<ion-row>
+		<ion-col size="12">
+		<div class="slids-box" style="text-align: center;">
+			<ion-slides [options]="slideOpts" spaceBetween="40">
+				<ion-slide style="width:80%;" *ngFor="let plan of plans;let i = index;">
+					<div class="slide">
+						<div class="pricn-box">
+							<div class="top-box-al">
+								<h5>{{plan?.name}}</h5>
+								<h3> ${{plan?.price}}/ <span> {{plan?.validity}} </span> </h3>
+							</div>
+							<div class="featrs">
+								<ul class="list-sctr">
+									<li>
+										<span class="icon-is"> <ion-icon name="checkbox-outline"></ion-icon> </span>
+										7 day free - Trial
+									</li>
+									<li>
+										<span class="icon-is"> <ion-icon name="checkbox-outline"></ion-icon> </span>
+										Exclusive Content Access
+									</li>
+									<li>
+										<span class="icon-is"> <ion-icon name="checkbox-outline"></ion-icon> </span>
+										200 Credits Every Month
+									</li>
+									<li>
+										<span class="icon-is"> <ion-icon name="checkbox-outline"></ion-icon> </span>
+										Guesting On Livestreams
+									</li>
+									<li>
+										<span class="icon-is"> <ion-icon name="checkbox-outline"></ion-icon> </span>
+										Support Your Favorites
+									</li>
+								</ul>
+							</div>
+							<div class="btn-choose" (click)="makePayment(plan?.plan_id)" *ngIf="paid == false">
+								<a href="javascript:void(0)" class="btn-choosen">Get It Now</a>
+							</div>
+							<div class="btn-choose" *ngIf="paid == true">
+								<a href="javascript:void(0)" class="btn-choosen"> Paid </a>
+							</div>
+							<h6 monthcontent>*Monthly subscription will be automatically deducted unless cancelled beforehand</h6>
+							<!--div class="btn-choose" (click)="inapp()" *ngIf="paid == false">
+								<a href="javascript:void(0)" class="btn-choosen"> Get Membership </a>
+							</div-->
+							<!--div class="btn-choose" *ngIf="paid == true">
+								<a href="javascript:void(0)" class="btn-choosen"> Paid </a>
+							</div-->
+						</div>
+					</div>
+				</ion-slide>
+			
+				
+			</ion-slides>
+
+		</div>
+		</ion-col>
+     
+		</ion-row>
+		<!--h4 class="ttl-main mt-25"> Choose Credits Bundle </h4-->
+		<!--div class="slids-box">
+			<ion-slides [options]="slideOpts2" spaceBetween="40">
+				<ion-slide *ngFor="let doc of credits; let i = index;" (click)="buy(doc)">
+					<div class="main-box-scrdt">
+						<span class="ics-pr"> <ion-icon name="cash-outline"></ion-icon> </span>
+						<h4> {{doc.credits}} Credits </h4>
+						<h3> ${{doc.price}}/ <span> only </span> </h3>
+					</div>
+				</ion-slide>
+			</ion-slides>
+		</div-->
+	</div>
+	</div>
+</ion-content>

@@ -1,0 +1,79 @@
+ion-grid{
+    flex: 1;
+}
+
+ion-row{
+    flex: 1;
+}
+
+.cardcategory{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+.cardcategory .overlay{
+    background: rgba(0, 0, 0, 0.35);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    border-radius: 8px;
+}
+
+
+.cardcategory .texts{
+   width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: relative;
+    background: linear-gradient(to bottom, transparent , black);
+    padding: 14px 25px;
+}
+
+.cardcategory .texts h1{
+    color: white;
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cardcategory .texts h1 span.aftr-strr {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative;
+}
+.cardcategory .texts h1 span.aftr-strr:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    left: -34px;
+    top: 8px;
+	opacity: 0.4;
+}
+.cardcategory .texts h1 span.aftr-strr:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    right: -34px;
+    top: 8px;
+	opacity: 0.4;
+}

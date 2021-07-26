@@ -1,0 +1,34 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Payment Options</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content>
+<div payment-sec>
+	<div class="Payment-head">
+		<h4 class="Payment-title">Choose Payment Option</h4>
+	</div>
+	<ion-list>
+	  <ion-radio-group value="" [(ngModel)]="options" >
+		<!--ion-list-header>
+		  <ion-label>Payment Options</ion-label>
+		</ion-list-header-->
+
+		<ion-item class="payment-check" lines="none">
+		  <ion-label>Stripe</ion-label>
+		  <ion-radio slot="start" value="stripe"></ion-radio>
+		</ion-item>
+
+		<ion-item class="payment-check" lines="none">
+		  <ion-label>Apple Pay</ion-label>
+		  <ion-radio slot="start" value="apple"></ion-radio>
+		</ion-item>
+		 <ion-button class="button-h" mode="ios" type="submit" (click)="save()" fill="solid" size="default" shape="round" expand="block">
+					Proceed
+		 </ion-button>
+	  </ion-radio-group>
+	  
+	</ion-list>
+</div>
+</ion-content>

@@ -1,0 +1,53 @@
+    <ion-header class="darkheader bg-cstr" no-border>
+      <ion-toolbar mode="ios">
+          <ion-title class="ion-text-capitalize">
+            {{strings.ST26}}
+          </ion-title>
+              <ion-buttons slot="start">
+                <ion-button color="dark" mode="md" (click)="goClosePage()" slot="start">
+                  <ion-icon name="md-arrow-back"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+      </ion-toolbar>
+  </ion-header>
+
+<ion-content fixed class="bg-cstr">
+
+    <ion-grid fixed style="height: 100%;">
+
+        <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%;">
+          <ion-col size="11" class="ion-text-center">
+            <img src="./assets/images/logo-white2.png" class="start-logo"/>
+      
+            <form class="form" autocomplete="off" [formGroup]="validationsform" (ngSubmit)="tryLogin(validationsform.value)" class="flst-str">
+                <ion-list class="line-input" mode="md"> 
+                    <ion-item mode="md">
+                        <ion-icon name="md-mail" size="small" slot="start"></ion-icon>
+                  <ion-input class="ion-text-left" placeholder="Email" type="email" formControlName="email"></ion-input>
+                    </ion-item> 
+                    <span class="error" *ngIf="!validationsform.controls.email.hasError('pattern') && validationsform.controls.email.touched && validationsform.controls.email.invalid">Please enter email address.</span>
+                    <span class="error" *ngIf="validationsform.controls.email.hasError('pattern') && validationsform.controls.email.invalid">Please enter valid email address.</span>
+                  </ion-list>
+                  <ion-list class="line-input" mode="md"> 
+                      <ion-item mode="md"> 
+                    <ion-icon name="md-lock" size="small" slot="start"></ion-icon>
+                  <ion-input class="ion-text-left" type="password" placeholder="Password" formControlName="password"></ion-input>
+                      </ion-item> 
+                      <span class="error" *ngIf="validationsform.controls.password.touched && validationsform.controls.password.invalid">Please enter valid password.</span>
+                      <span class="error" *ngIf="validationsform.controls.password.hasError('pattern') && validationsform.controls.password.invalid">Please enter valid password.</span>
+                    </ion-list>
+                <ion-button class="button-h" mode="ios" type="submit"  fill="solid" size="default" shape="round" expand="block">
+                  {{strings.ST28}}
+                </ion-button>
+              </form>
+
+				<p class="go-to-restpass">
+                  <a (click)="goRestPassPage()">{{strings.ST29}}</a>
+                </p>
+      
+          </ion-col>
+        </ion-row>
+      
+      </ion-grid>
+
+</ion-content>

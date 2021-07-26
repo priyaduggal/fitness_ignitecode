@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>paymentoptions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-radio-group value="" [(ngModel)]="options" >
+    <ion-list-header>
+      <ion-label>Payment Options</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Stripe</ion-label>
+      <ion-radio slot="start" value="stripe"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Apple Pay</ion-label>
+      <ion-radio slot="start" value="apple"></ion-radio>
+    </ion-item>
+	 <ion-button class="button-h" mode="ios" type="submit" (click)="save()" fill="solid" size="default" shape="round" expand="block">
+                Save
+     </ion-button>
+  </ion-radio-group>
+  
+</ion-list>
+</ion-content>

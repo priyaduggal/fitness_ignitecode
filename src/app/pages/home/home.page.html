@@ -1,0 +1,107 @@
+<ion-header class="darkheader">
+  <ion-toolbar lines="none">
+      <ion-buttons slot="start">
+          <ion-button (click)="openMenu()">
+              <ion-icon name="md-menu"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-vhang">
+	<div class="content-str">
+		<div class="box-aslly-s">
+			<div class="box-conts" [routerLink]="['/workouts']">
+				<span class="icoh-st"> <img src="./assets/images/Workouts_Cover.png"> </span>
+				<h3> {{strings.ST1}} </h3>
+				<p> {{data?.workouts}} Items </p> 
+				<span class="right-ics"> <ion-icon name="md-arrow-dropright"></ion-icon> </span>
+			</div>
+		</div>
+		<div class="box-aslly-s">
+			<div class="box-conts" [routerLink]="['/exercises']">
+				<span class="icoh-st"> <img src="./assets/images/Exercises_Cover.png"> </span>
+				<h3> {{strings.ST2}} </h3>
+				<p> {{data?.excercises}} Items </p> 
+				<span class="right-ics"> <ion-icon name="md-arrow-dropright"></ion-icon> </span>
+			</div>
+		</div>
+		<div class="box-aslly-s">
+			<div class="box-conts" [routerLink]="['/diets']">
+				<span class="icoh-st"> <img src="./assets/images/Diets_Cover.png"> </span>
+				<h3> {{strings.ST3}} </h3>
+				<p> {{data?.diets}} Items </p> 
+				<span class="right-ics"> <ion-icon name="md-arrow-dropright"></ion-icon> </span>
+			</div>
+		</div>
+		<div class="box-aslly-s">
+			<div class="box-conts" [routerLink]="['/posts']">
+				<span class="icoh-st"> <img src="./assets/images/News_Cover.png"> </span>
+				<h3> {{strings.ST4}} </h3>
+				<p> {{data?.news}} Items </p> 
+				<span class="right-ics"> <ion-icon name="md-arrow-dropright"></ion-icon> </span>
+			</div>
+		</div>
+		<div class="box-aslly-s">
+			<div class="box-conts" [routerLink]="['/calculator']">
+				<span class="icoh-st"> <img src="./assets/images/BMR_Cover.png"> </span>
+				<h3> {{strings.ST105}} </h3>
+				<p> </p> 
+				<span class="right-ics"> <ion-icon name="md-arrow-dropright"></ion-icon> </span>
+			</div>
+		</div>
+	</div>
+    <!--ion-grid class="ion-no-padding">
+      <ion-row class="ion-justify-content-center ion-align-items-center row-header-bg hrtrs">
+        <ion-col size="12" class="ion-text-center">
+          <img src="./assets/images/logo.png" class="col-header-logo class-trr">
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="menu-cols align-items-stretch">
+          <ion-col size="12" [routerLink]="['/workouts']">
+			<div class="box-firsts">	
+				<span class="icoh-st"> <img src="./assets/images/workouts.png"> </span>
+				<ion-label>{{strings.ST1}}</ion-label>
+			</div>
+          </ion-col>
+
+          <ion-col size="6" [routerLink]="['/exercises']">
+				<div class="box-seccons-str">	
+					<span class="icoh-dd"> <img src="./assets/images/exercises.png"> </span>
+					<ion-label>{{strings.ST2}}</ion-label>
+				</div>
+          </ion-col>
+
+          <ion-col size="6" [routerLink]="['/diets']">
+				<div class="box-seccons-str">	
+					<span class="icoh-dd"> <img src="./assets/images/diets.png"> </span>
+					<ion-label>{{strings.ST3}}</ion-label>
+				</div>
+		  </ion-col>
+            
+          <ion-col size="6" [routerLink]="['/posts']">
+				<div class="box-seccons-str">	
+					<span class="icoh-dd">  <img src="./assets/images/blog.png"> </span>
+					<ion-label>{{strings.ST4}}</ion-label>
+				</div>
+		 </ion-col>
+
+          <ion-col size="6" [routerLink]="['/calculator']">
+				<div class="box-seccons-str">	
+					<span class="icoh-dd">  <img src="./assets/images/calculator.png"> </span>
+					<ion-label>{{strings.ST105}}</ion-label>
+				</div>
+		 </ion-col>
+            
+          <ion-col size="6" [routerLink]="['/motivation']">
+              <img src="./assets/images/quotes.png">
+              <ion-label>{{strings.ST5}}</ion-label>
+          </ion-col>
+
+      </ion-row>
+  
+    </ion-grid-->
+  
+  </ion-content>
+  

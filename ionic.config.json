@@ -1,0 +1,7 @@
+{
+  "name": "ignity",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

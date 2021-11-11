@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./aboutus.page.scss'],
 })
 export class AboutusPage implements OnInit {
-
+cards:any=[];
   public strings = strings;
   public config = config;
   data:any;

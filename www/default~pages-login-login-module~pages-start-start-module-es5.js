@@ -129,6 +129,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _config_strings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../config/strings */ "./src/app/config/strings.ts");
 /* harmony import */ var _forgotpass_forgotpass_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forgotpass/forgotpass.page */ "./src/app/pages/forgotpass/forgotpass.page.ts");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/data.service */ "./src/app/services/data.service.ts");
+
 
 
 
@@ -138,7 +140,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LoginPage = /** @class */ (function () {
-    function LoginPage(authService, navCtrl, formBuilder, router, menuCtrl, modalCtrl, loadingController) {
+    function LoginPage(DataService, authService, navCtrl, formBuilder, router, menuCtrl, modalCtrl, loadingController) {
+        this.DataService = DataService;
         this.authService = authService;
         this.navCtrl = navCtrl;
         this.formBuilder = formBuilder;
@@ -193,6 +196,48 @@ var LoginPage = /** @class */ (function () {
             });
         });
     };
+    LoginPage.prototype.presentLoading = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.loadingController.create({
+                                mode: "ios"
+                            })];
+                    case 1:
+                        _a.loading = _b.sent();
+                        return [4 /*yield*/, this.loading.present()];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    LoginPage.prototype.stopLoading = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var self;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(this.loading != undefined)) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.loading.dismiss()];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        self = this;
+                        setTimeout(function () {
+                            self.stopLoading();
+                        }, 1000);
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
     LoginPage.prototype.tryLogin = function (value) {
         var _this = this;
         var controls = this.validationsform.controls;
@@ -204,17 +249,23 @@ var LoginPage = /** @class */ (function () {
             });
             return;
         }
+        this.presentLoading();
         this.authService.doLogin(value)
             .then(function (res) {
-            _this.modalCtrl.dismiss();
-            var paid = localStorage.getItem('user_paid');
-            if (paid == 'true') {
-                _this.router.navigate(['/home']);
-            }
-            else {
-                _this.router.navigate(['/plans']);
-            }
+            _this.DataService.getuserdetails(controls.email.value)
+                .subscribe(function (resp) {
+                _this.stopLoading();
+                if (resp['ok'] == 'ok') {
+                    _this.modalCtrl.dismiss();
+                    _this.router.navigate(['/home']);
+                }
+                else {
+                    _this.modalCtrl.dismiss();
+                    _this.router.navigate(['/plans']);
+                }
+            });
         }, function (err) {
+            _this.stopLoading();
             if (err.code === 'auth/wrong-password') {
                 _this.presentAlert(_config_strings__WEBPACK_IMPORTED_MODULE_6__["strings"].ST30);
             }
@@ -246,6 +297,7 @@ var LoginPage = /** @class */ (function () {
         this.modalCtrl.dismiss();
     };
     LoginPage.ctorParameters = function () { return [
+        { type: _services_data_service__WEBPACK_IMPORTED_MODULE_8__["DataService"] },
         { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"] },
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
@@ -260,7 +312,8 @@ var LoginPage = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./login.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/login/login.page.html"),
             styles: [__webpack_require__(/*! ./login.page.scss */ "./src/app/pages/login/login.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_8__["DataService"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"],
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],

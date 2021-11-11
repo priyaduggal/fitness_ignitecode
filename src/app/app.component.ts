@@ -4,7 +4,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
-
+import { DataService } from './services/data.service';
 import { strings } from './config/strings';
 import { Router } from '@angular/router';
 
@@ -20,7 +20,7 @@ errors=['',null,undefined];
 
   public appPages = [
     {
-      title: strings.ST1,
+      title: strings.ST10,
       url: '/workouts',
       icon: 'md-calendar'
     },
@@ -59,6 +59,16 @@ errors=['',null,undefined];
       url: '/aboutus',
       icon: 'md-bookmark'
     },
+	 {
+      title: 'Manage Cards',
+      url: '/mycards',
+      icon: 'md-card'
+    },
+    {
+      title: 'Subscriptions',
+      url: '/subscriptions',
+      icon: 'md-card'
+    },
    
     
   ];
@@ -71,7 +81,8 @@ errors=['',null,undefined];
     private router: Router,
     public afAuth: AngularFireAuth,
     public authService: AuthService,
-	public alertController: AlertController
+	public alertController: AlertController,
+	private DataService: DataService
   ) {
     this.initializeApp();
   }
@@ -80,7 +91,22 @@ errors=['',null,undefined];
     this.platform.ready().then( async () => {
       await this.afAuth.user.subscribe(user => {
         if (user) {
-		this.paid=localStorage.getItem('user_paid');
+			
+		this.DataService.getuserdetails( user.email)
+		.subscribe( resp => {
+		
+		if(resp['ok']=='ok')
+		{
+			this.router.navigate(['/home']);
+		}else{
+			
+			this.router.navigate(['/plans']);
+		}
+		
+		});	
+			
+			
+		/* this.paid=localStorage.getItem('user_paid');
 		
 		if(this.errors.indexOf(this.paid)==-1)
 		{
@@ -88,7 +114,7 @@ errors=['',null,undefined];
 		}else
 		{
 			 this.router.navigate(['/plans']);
-		}
+		} */
         } else {
           this.router.navigate(['/start']);
         } 

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { NavController, MenuController, ModalController, LoadingController } from '@ionic/angular';
 import { strings } from '../../config/strings';
 import { ForgotpassPage } from '../forgotpass/forgotpass.page';
-
+import { DataService } from '../../services/data.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,10 +13,11 @@ import { ForgotpassPage } from '../forgotpass/forgotpass.page';
 })
 
 export class LoginPage implements OnInit {
-
+loading:any;
   validationsform: FormGroup;
 
   constructor(
+  private DataService: DataService,
     private authService: AuthService,
     public navCtrl: NavController,
     private formBuilder: FormBuilder,
@@ -59,10 +60,28 @@ export class LoginPage implements OnInit {
     });
     await loading.present();
   }
-
+ async presentLoading() {
+    this.loading = await this.loadingController.create({
+          mode:"ios"
+    });
+      await this.loading.present();
+  }
+   async stopLoading() {
+    if(this.loading != undefined){
+      await this.loading.dismiss();
+    }
+    else{
+      var self = this;
+      setTimeout(function(){
+        self.stopLoading();
+      },1000);
+    }
+  }
   tryLogin(value) {
+	 
     const controls = this.validationsform.controls;
     console.log(controls);
+	 
     
     /** check form */
     if (this.validationsform.invalid)
@@ -72,22 +91,26 @@ export class LoginPage implements OnInit {
       );
       return;
     }
+	 this.presentLoading();
     this.authService.doLogin(value)
     .then(res => {
-      this.modalCtrl.dismiss();
-	  var paid=localStorage.getItem('user_paid');
-	  
-	  if(paid=='true')
+   
+	  this.DataService.getuserdetails( controls.email.value)
+		.subscribe( resp => {
+		  this.stopLoading();
+		if(resp['ok']=='ok')
 		{
-          this.router.navigate(['/home']);
-		}else
-		{
-			 this.router.navigate(['/plans']);
+			 this.modalCtrl.dismiss();
+			this.router.navigate(['/home']);
+		}else{
+			 this.modalCtrl.dismiss();
+			this.router.navigate(['/plans']);
 		}
-	  
-	  
-     
+		
+		});
+	 
     }, err => {
+		  this.stopLoading();
       if (err.code === 'auth/wrong-password') {
         this.presentAlert(strings.ST30);
       } else if (err.code === 'auth/user-not-found') {

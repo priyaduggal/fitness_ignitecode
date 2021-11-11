@@ -1,8 +1,6 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -179,9 +177,6 @@ font-size: 20px;
   text-transform: uppercase !important;
 }
 
-ion-content , h1, h2, h3, h4, h5, h6, p, span, * {
-	font-family: 'Yeseva One', cursive !important;
-}
 ion-content , h1, h2, h3, h4, h5, h6, p, span, ion-header ion-title , ul, ol {
 	color: #555555;
 }

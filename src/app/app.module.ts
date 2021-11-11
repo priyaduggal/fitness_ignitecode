@@ -29,10 +29,14 @@ import { AdmobService } from './services/admob.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { Stripe } from '@ionic-native/stripe/ngx';
 import { PaymentoptionsPage } from './pages/paymentoptions/paymentoptions.page';
+import { ConfirmdeletePage } from './pages/confirmdelete/confirmdelete.page';
+import { VideoviewPage } from './pages/videoview/videoview.page';
+import { EmbedVideo } from 'ngx-embed-video';
 @NgModule({
-  declarations: [AppComponent,PaymentoptionsPage],
-  entryComponents: [PaymentoptionsPage],
+  declarations: [AppComponent,PaymentoptionsPage,ConfirmdeletePage,VideoviewPage],
+  entryComponents: [PaymentoptionsPage,ConfirmdeletePage,VideoviewPage],
   imports: [
+   EmbedVideo.forRoot(),
     BrowserModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),

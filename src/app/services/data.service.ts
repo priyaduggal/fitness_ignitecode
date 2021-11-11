@@ -67,6 +67,22 @@ export class DataService {
   getDataFeaturedPosts() {
     return this.ejectQuery<PostsObject[]>('/json/data_posts.php?featured=1');
   }
+  
+   deletecard(id: number) {
+	      
+	  return this.ejectQuery(`/json/deletecard.php?id=${id}`); 
+   }
+   postcarddetails(card: string,email:string) {
+	   
+	  return this.ejectQuery(`/json/addcard.php?card=${card}&email=${email}`); 
+	   
+   }
+   getusersubscriptions(email: string) {
+	 return this.ejectQuery(`/json/getusersubscriptions.php?email=${email}`);  
+   }
+   getUsercards(email: string) {
+    return this.ejectQuery(`/json/getusercards.php?email=${email}`);
+  }
 
   getDataRecentPosts(limit: number) {
     return this.ejectQuery<PostsObject[]>(`/json/data_posts.php?limit=${limit}`);
@@ -85,6 +101,10 @@ export class DataService {
     return this.ejectQuery<MuscleObject[]>(`/json/data_bodypart.php?id=${id}`);
   }
 
+  getcarddetails(id: number) {
+	return this.ejectQuery<EquipmentObject[]>(`/json/get_card_details.php?id=${id}`);  
+	  
+  }
   getDataExercisesByEquipment(id: number) {
     return this.ejectQuery<EquipmentObject[]>(`/json/data_equipment.php?id=${id}`);
   }
@@ -97,6 +117,9 @@ export class DataService {
     return this.ejectQuery<PostsObject[]>(`/json/data_posts.php?tag=${id}`);
   }
 
+  getuserdetails(email: string) {
+	 return this.ejectQuery(`/json/getusersubscription.php?email=${email}`); 
+  }
   getDataExerciseById(id: number) {
     return this.ejectQuery(`/json/data_exercises.php?id=${id}&limit=1`);
   }
@@ -117,11 +140,15 @@ export class DataService {
     return this.ejectQuery<ExercisesObject[]>(`/json/data_days.php?id=${id}&day=${day}`);
   }
 
-
- poststripedetails(token:string,id: number,email:string)
+ editcarddetails(card:string,id: number)
   {
 	   
-	 return this.ejectQuery<PlansObject[]>(`/json/user_add_plan.php?token=${token}&id=${id}&email=${email}`);  
+	 return this.ejectQuery<PlansObject[]>(`/json/edit_card.php?card=${card}&id=${id}`);  
+  }
+ poststripedetails(card:string,token:string,id: number,email:string,name:string)
+  {
+	   
+	 return this.ejectQuery<PlansObject[]>(`/json/user_add_plan.php?card=${card}&token=${token}&id=${id}&email=${email}&name=${name}`);  
   }
 
 }

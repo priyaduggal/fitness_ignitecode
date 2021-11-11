@@ -81,7 +81,7 @@
   "cordova-plugin-streaming-media": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-streaming-media@^2.2.0"
+      "id": "https://github.com/nchutchind/cordova-plugin-streaming-media"
     },
     "is_top_level": true,
     "variables": {}

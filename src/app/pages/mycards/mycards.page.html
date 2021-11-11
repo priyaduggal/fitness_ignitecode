@@ -1,0 +1,59 @@
+<ion-header class="lightheader" no-border>
+  <ion-toolbar mode="ios">
+      <ion-title class="ion-text-capitalize">
+        Manage Cards
+      </ion-title>
+      <ion-buttons slot="start">
+        <app-backbutton color="dark"></app-backbutton>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fixed>
+
+<ion-grid fixed style="height: 100%;">
+<div class="date-cont">	
+<p *ngIf="cards?.length==0">No saved cards</p>
+<ion-item-sliding class="slide-posu" *ngFor="let c of cards">
+<ion-item lines="none" >
+<div class="box-crdits">
+					 
+						<div class="top-cips">
+							<img src="assets/images/chip.png" class="chip-s">
+							<img src="assets/images/visa.png" class="visa-s">
+						</div>
+							<div class="accnt-nusm"> 
+								<span> **** </span>
+								<span> **** </span>
+								<span> **** </span>
+								<span>  {{c.number.substr(c.number.length - 4)}}  </span>
+							</div>						
+						<div class="tst-lta">
+							<p> Name 
+								<span > {{c.name}} </span> 
+							
+							</p>
+							<p> Exp Date 
+								<span >  {{c.expMonth}}/{{c.expYear}} </span> 
+								
+							</p>
+						</div>	
+
+					</div>
+</ion-item>
+			<ion-item-options>
+				<ion-item-option color="danger" (click)="delete(c?.card_id)">
+					<ion-icon slot="bottom" name="trash"></ion-icon>
+				</ion-item-option>
+				<ion-item-option routerLink="/editcard/{{c?.card_id}}" color="secondary">
+					<ion-icon slot="bottom" name="create" routerLink="/editcard/{{c?.card_id}}"></ion-icon>
+				</ion-item-option>
+			</ion-item-options>
+		</ion-item-sliding>
+			<a href="javascript:void(0)" routerLink="/addcard"><ion-icon name="add"></ion-icon> Add New Card </a>
+  </div>
+  
+  </ion-grid>
+
+</ion-content>
+

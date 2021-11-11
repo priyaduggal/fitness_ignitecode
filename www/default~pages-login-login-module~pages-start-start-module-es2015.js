@@ -123,6 +123,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _config_strings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../config/strings */ "./src/app/config/strings.ts");
 /* harmony import */ var _forgotpass_forgotpass_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forgotpass/forgotpass.page */ "./src/app/pages/forgotpass/forgotpass.page.ts");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/data.service */ "./src/app/services/data.service.ts");
+
 
 
 
@@ -132,7 +134,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginPage = class LoginPage {
-    constructor(authService, navCtrl, formBuilder, router, menuCtrl, modalCtrl, loadingController) {
+    constructor(DataService, authService, navCtrl, formBuilder, router, menuCtrl, modalCtrl, loadingController) {
+        this.DataService = DataService;
         this.authService = authService;
         this.navCtrl = navCtrl;
         this.formBuilder = formBuilder;
@@ -173,6 +176,27 @@ let LoginPage = class LoginPage {
             yield loading.present();
         });
     }
+    presentLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.loading = yield this.loadingController.create({
+                mode: "ios"
+            });
+            yield this.loading.present();
+        });
+    }
+    stopLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if (this.loading != undefined) {
+                yield this.loading.dismiss();
+            }
+            else {
+                var self = this;
+                setTimeout(function () {
+                    self.stopLoading();
+                }, 1000);
+            }
+        });
+    }
     tryLogin(value) {
         const controls = this.validationsform.controls;
         console.log(controls);
@@ -181,17 +205,23 @@ let LoginPage = class LoginPage {
             Object.keys(controls).forEach(controlName => controls[controlName].markAsTouched());
             return;
         }
+        this.presentLoading();
         this.authService.doLogin(value)
             .then(res => {
-            this.modalCtrl.dismiss();
-            var paid = localStorage.getItem('user_paid');
-            if (paid == 'true') {
-                this.router.navigate(['/home']);
-            }
-            else {
-                this.router.navigate(['/plans']);
-            }
+            this.DataService.getuserdetails(controls.email.value)
+                .subscribe(resp => {
+                this.stopLoading();
+                if (resp['ok'] == 'ok') {
+                    this.modalCtrl.dismiss();
+                    this.router.navigate(['/home']);
+                }
+                else {
+                    this.modalCtrl.dismiss();
+                    this.router.navigate(['/plans']);
+                }
+            });
         }, err => {
+            this.stopLoading();
             if (err.code === 'auth/wrong-password') {
                 this.presentAlert(_config_strings__WEBPACK_IMPORTED_MODULE_6__["strings"].ST30);
             }
@@ -216,6 +246,7 @@ let LoginPage = class LoginPage {
     }
 };
 LoginPage.ctorParameters = () => [
+    { type: _services_data_service__WEBPACK_IMPORTED_MODULE_8__["DataService"] },
     { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
@@ -230,7 +261,8 @@ LoginPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./login.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/login/login.page.html"),
         styles: [__webpack_require__(/*! ./login.page.scss */ "./src/app/pages/login/login.page.scss")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_8__["DataService"],
+        _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"],
         _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],

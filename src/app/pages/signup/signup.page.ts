@@ -19,6 +19,7 @@ export class SignupPage implements OnInit {
  plans: any =[];
  planid:any;
  isLoading = false;
+ loading:any;
  errors:any=['',null,undefined];
   constructor(
   private DataService: DataService,
@@ -54,7 +55,23 @@ export class SignupPage implements OnInit {
       ])),
     });
   }
-
+ async presentLoading() {
+    this.loading = await this.loadingController.create({
+          mode:"ios"
+    });
+      await this.loading.present();
+  }
+   async stopLoading() {
+    if(this.loading != undefined){
+      await this.loading.dismiss();
+    }
+    else{
+      var self = this;
+      setTimeout(function(){
+        self.stopLoading();
+      },1000);
+    }
+  }
   tryRegister(value) {
     const controls = this.validationsform.controls;
     console.log(controls);
@@ -70,19 +87,24 @@ export class SignupPage implements OnInit {
 	$('.cont-scti-all').show();
 	//$('.cont-scti-in').hide();
     this.isDisabled = true;
-	
+	 this.presentLoading();
     this.authService.doRegister(value)
     .then(res => {
+		  this.stopLoading();
+		
       firebase.auth().currentUser.updateProfile({
         displayName : value.name,
     });
       this.modalCtrl.dismiss();
       this.router.navigate(['/plans']);
     }, err => {
+		  this.stopLoading();
     this.isDisabled = false;
       if (err.code === 'auth/email-already-in-use') {
+		    this.stopLoading();
         this.presentAlert(strings.ST36);
       } else {
+		    this.stopLoading();
         this.presentAlert(strings.ST32);
       }
     });  

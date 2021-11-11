@@ -5,7 +5,9 @@ import { strings } from '../../config/strings';
 import {StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
 import { AdmobService } from '../../services/admob.service';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
-
+import { EmbedVideoService } from 'ngx-embed-video';
+import { VideoviewPage } from '../videoview/videoview.page';
+import { ModalController,NavParams,LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-edetails',
   templateUrl: './edetails.page.html',
@@ -21,15 +23,29 @@ export class EdetailsPage implements OnInit {
   isInstruHidden = true;
   isTipsHidden = true;
   orientation = 'landscape';
-
+iframe_html:any;
+ //yt_iframe_html: any;
+ // vimeo_iframe_html: any;
+ // dm_iframe_html: any;
+  
+ // vimeoUrl = "https://vimeo.com/197933516";
+ // youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs";
+ // dailymotionUrl = "https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport";
   constructor(
+  public modalController: ModalController,
+    private embedService: EmbedVideoService,
     private dataService: DataService,
     private router: Router,
     private route: ActivatedRoute,
     private streamingMedia: StreamingMedia,
     private admob: AdmobService,
     private screenOrientation: ScreenOrientation
-    ) {}
+    ) {
+		
+	//this.yt_iframe_html = this.embedService.embed(this.youtubeUrl);
+   // this.vimeo_iframe_html = this.embedService.embed(this.vimeoUrl);
+   // this.dm_iframe_html = this.embedService.embed(this.dailymotionUrl);
+	}
 
     ngOnInit() {
       this.admob.HideBannerAd();
@@ -80,17 +96,29 @@ export class EdetailsPage implements OnInit {
   } );
 }
 
-play() {
-  const options: StreamingVideoOptions = {
+async play() {
+	
+	 const modal = await this.modalController.create({
+		component: VideoviewPage,
+		cssClass: 'confirmdelete',
+		componentProps: {
+	    url:this.exercise.exercise_video,
+		}
+		});
+		modal.onDidDismiss().then((detail) => {
+		});
+    return await modal.present();  
+	
+ /*  const options: StreamingVideoOptions = {
     successCallback: () => { console.log('Video played'); },
     errorCallback: (e) => { console.log('Error streaming'); },
     orientation: 'landscape',
     shouldAutoClose: true,
     controls: true
-  };
+  }; */
 
   // tslint:disable-next-line: max-line-length
-  this.streamingMedia.playVideo(this.exercise.exercise_video, options);
+ // this.streamingMedia.playVideo(this.exercise.exercise_video, options);
 }
 
 setPortrait() {

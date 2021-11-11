@@ -445,6 +445,17 @@ module.exports = "<ion-app>\n  <ion-split-pane contentId=\"main-content\" >\n   
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/confirmdelete/confirmdelete.page.html":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/confirmdelete/confirmdelete.page.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-content>\n<ion-header>\n  <ion-toolbar>\n\t \n\t    <ion-title class=\"ion-text-center\">Delete Card</ion-title>\n\t\t\n  </ion-toolbar>\n</ion-header>\n<div class=\"cenys\">\n<p>Are you sure </p>\n<span>You want to delete this card</span>\n <ion-row>\n<ion-col size=\"6\">\n\t<ion-button acptedbtn type=\"submit\" expand=\"full\" shape=\"round\" color=\"secondary\" (click)=\"delete()\">Delete</ion-button>\n</ion-col>\n<ion-col size=\"6\">\n\t<ion-button acptedbtn type=\"submit\" (click)=\"dismiss()\" expand=\"full\" shape=\"round\" color=\"danger\" >Cancel</ion-button>\n</ion-col>\n</ion-row>\n</div>\n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/pages/paymentoptions/paymentoptions.page.html":
 /*!*****************************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/pages/paymentoptions/paymentoptions.page.html ***!
@@ -453,6 +464,17 @@ module.exports = "<ion-app>\n  <ion-split-pane contentId=\"main-content\" >\n   
 /***/ (function(module, exports) {
 
 module.exports = "<!--ion-header>\n  <ion-toolbar>\n    <ion-title class=\"ion-text-center\">Payment Options</ion-title>\n  </ion-toolbar>\n</ion-header-->\n\n<ion-content>\n<div payment-sec>\n\t<div class=\"Payment-head\">\n\t\t<h4 class=\"Payment-title\">Choose Payment Option</h4>\n\t</div>\n\t<ion-list>\n\t  <ion-radio-group value=\"\" [(ngModel)]=\"options\" >\n\t\t<!--ion-list-header>\n\t\t  <ion-label>Payment Options</ion-label>\n\t\t</ion-list-header-->\n\n\t\t<ion-item class=\"payment-check\" lines=\"none\">\n\t\t  <ion-label>Stripe</ion-label>\n\t\t  <ion-radio slot=\"start\" value=\"stripe\"></ion-radio>\n\t\t</ion-item>\n\n\t\t<ion-item class=\"payment-check\" lines=\"none\">\n\t\t  <ion-label>Apple Pay</ion-label>\n\t\t  <ion-radio slot=\"start\" value=\"apple\"></ion-radio>\n\t\t</ion-item>\n\t\t <ion-button class=\"button-h\" mode=\"ios\" type=\"submit\" (click)=\"save()\" fill=\"solid\" size=\"default\" shape=\"round\" expand=\"block\">\n\t\t\t\t\tProceed\n\t\t </ion-button>\n\t  </ion-radio-group>\n\t  \n\t</ion-list>\n</div>\n</ion-content>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/videoview/videoview.page.html":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/videoview/videoview.page.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-content>\n<ion-header>\n  <ion-toolbar>\n\t \n\t    <ion-title class=\"ion-text-center\">Video</ion-title>\n\t\t<ion-buttons slot=\"end\"  (click)=\"dismiss()\">\n\t\t\t<ion-icon name=\"close\"></ion-icon>\n\t\t </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<div class=\"cenys\">\n<div [innerHtml]=\"urlview\"></div>\n <ion-row>\n\n<!--ion-col size=\"6\">\n\t<ion-button acptedbtn type=\"submit\" (click)=\"dismiss()\" expand=\"full\" shape=\"round\" color=\"danger\" >Cancel</ion-button>\n</ion-col-->\n</ion-row>\n</div>\n</ion-content>\n"
 
 /***/ }),
 
@@ -480,11 +502,11 @@ const routes = [
     },
     {
         path: 'start',
-        loadChildren: () => Promise.all(/*! import() | pages-start-start-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("default~pages-forgotpass-forgotpass-module~pages-login-login-module~pages-start-start-module"), __webpack_require__.e("default~pages-signup-signup-module~pages-start-start-module"), __webpack_require__.e("default~pages-login-login-module~pages-start-start-module"), __webpack_require__.e("pages-start-start-module")]).then(__webpack_require__.bind(null, /*! ./pages/start/start.module */ "./src/app/pages/start/start.module.ts")).then(m => m.StartPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-start-start-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("default~pages-forgotpass-forgotpass-module~pages-login-login-module~pages-start-start-module"), __webpack_require__.e("default~pages-signup-signup-module~pages-start-start-module"), __webpack_require__.e("default~pages-login-login-module~pages-start-start-module"), __webpack_require__.e("pages-start-start-module")]).then(__webpack_require__.bind(null, /*! ./pages/start/start.module */ "./src/app/pages/start/start.module.ts")).then(m => m.StartPageModule)
     },
     {
         path: 'home',
-        loadChildren: () => Promise.all(/*! import() | pages-home-home-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-home-home-module")]).then(__webpack_require__.bind(null, /*! ./pages/home/home.module */ "./src/app/pages/home/home.module.ts")).then(m => m.HomePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-home-home-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-home-home-module")]).then(__webpack_require__.bind(null, /*! ./pages/home/home.module */ "./src/app/pages/home/home.module.ts")).then(m => m.HomePageModule)
     },
     {
         path: 'login',
@@ -492,11 +514,11 @@ const routes = [
     },
     {
         path: 'signup',
-        loadChildren: () => Promise.all(/*! import() | pages-signup-signup-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("default~pages-signup-signup-module~pages-start-start-module")]).then(__webpack_require__.bind(null, /*! ./pages/signup/signup.module */ "./src/app/pages/signup/signup.module.ts")).then(m => m.SignupPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-signup-signup-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("default~pages-signup-signup-module~pages-start-start-module")]).then(__webpack_require__.bind(null, /*! ./pages/signup/signup.module */ "./src/app/pages/signup/signup.module.ts")).then(m => m.SignupPageModule)
     },
     {
         path: 'termsguest',
-        loadChildren: () => Promise.all(/*! import() | pages-termsguest-termsguest-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-termsguest-termsguest-module")]).then(__webpack_require__.bind(null, /*! ./pages/termsguest/termsguest.module */ "./src/app/pages/termsguest/termsguest.module.ts")).then(m => m.TermsguestPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-termsguest-termsguest-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-termsguest-termsguest-module")]).then(__webpack_require__.bind(null, /*! ./pages/termsguest/termsguest.module */ "./src/app/pages/termsguest/termsguest.module.ts")).then(m => m.TermsguestPageModule)
     },
     {
         path: 'forgotpass',
@@ -504,127 +526,127 @@ const routes = [
     },
     {
         path: 'workouts',
-        loadChildren: () => Promise.all(/*! import() | pages-workouts-workouts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-workouts-workouts-module")]).then(__webpack_require__.bind(null, /*! ./pages/workouts/workouts.module */ "./src/app/pages/workouts/workouts.module.ts")).then(m => m.WorkoutsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-workouts-workouts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-workouts-workouts-module")]).then(__webpack_require__.bind(null, /*! ./pages/workouts/workouts.module */ "./src/app/pages/workouts/workouts.module.ts")).then(m => m.WorkoutsPageModule)
     },
     {
         path: 'exercises',
-        loadChildren: () => Promise.all(/*! import() | pages-exercises-exercises-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-exercises-exercises-module")]).then(__webpack_require__.bind(null, /*! ./pages/exercises/exercises.module */ "./src/app/pages/exercises/exercises.module.ts")).then(m => m.ExercisesPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-exercises-exercises-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-exercises-exercises-module")]).then(__webpack_require__.bind(null, /*! ./pages/exercises/exercises.module */ "./src/app/pages/exercises/exercises.module.ts")).then(m => m.ExercisesPageModule)
     },
     {
         path: 'profile',
-        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfilePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfilePageModule)
     },
     {
         path: 'motivation',
-        loadChildren: () => Promise.all(/*! import() | pages-motivation-motivation-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-motivation-motivation-module")]).then(__webpack_require__.bind(null, /*! ./pages/motivation/motivation.module */ "./src/app/pages/motivation/motivation.module.ts")).then(m => m.MotivationPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-motivation-motivation-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-motivation-motivation-module")]).then(__webpack_require__.bind(null, /*! ./pages/motivation/motivation.module */ "./src/app/pages/motivation/motivation.module.ts")).then(m => m.MotivationPageModule)
     },
     {
         path: 'calculator',
-        loadChildren: () => Promise.all(/*! import() | pages-calculator-calculator-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-calculator-calculator-module")]).then(__webpack_require__.bind(null, /*! ./pages/calculator/calculator.module */ "./src/app/pages/calculator/calculator.module.ts")).then(m => m.CalculatorPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-calculator-calculator-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-calculator-calculator-module")]).then(__webpack_require__.bind(null, /*! ./pages/calculator/calculator.module */ "./src/app/pages/calculator/calculator.module.ts")).then(m => m.CalculatorPageModule)
     },
     {
         path: 'bmiinfo',
-        loadChildren: () => Promise.all(/*! import() | pages-bmiinfo-bmiinfo-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-bmiinfo-bmiinfo-module")]).then(__webpack_require__.bind(null, /*! ./pages/bmiinfo/bmiinfo.module */ "./src/app/pages/bmiinfo/bmiinfo.module.ts")).then(m => m.BmiinfoPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-bmiinfo-bmiinfo-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-bmiinfo-bmiinfo-module")]).then(__webpack_require__.bind(null, /*! ./pages/bmiinfo/bmiinfo.module */ "./src/app/pages/bmiinfo/bmiinfo.module.ts")).then(m => m.BmiinfoPageModule)
     },
     {
         path: 'diets',
-        loadChildren: () => Promise.all(/*! import() | pages-diets-diets-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-diets-diets-module")]).then(__webpack_require__.bind(null, /*! ./pages/diets/diets.module */ "./src/app/pages/diets/diets.module.ts")).then(m => m.DietsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-diets-diets-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-diets-diets-module")]).then(__webpack_require__.bind(null, /*! ./pages/diets/diets.module */ "./src/app/pages/diets/diets.module.ts")).then(m => m.DietsPageModule)
     },
     {
         path: 'posts',
-        loadChildren: () => Promise.all(/*! import() | pages-posts-posts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-posts-posts-module")]).then(__webpack_require__.bind(null, /*! ./pages/posts/posts.module */ "./src/app/pages/posts/posts.module.ts")).then(m => m.PostsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-posts-posts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-posts-posts-module")]).then(__webpack_require__.bind(null, /*! ./pages/posts/posts.module */ "./src/app/pages/posts/posts.module.ts")).then(m => m.PostsPageModule)
     },
     {
         path: 'goals',
-        loadChildren: () => Promise.all(/*! import() | pages-goals-goals-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-goals-goals-module")]).then(__webpack_require__.bind(null, /*! ./pages/goals/goals.module */ "./src/app/pages/goals/goals.module.ts")).then(m => m.GoalsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-goals-goals-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-goals-goals-module")]).then(__webpack_require__.bind(null, /*! ./pages/goals/goals.module */ "./src/app/pages/goals/goals.module.ts")).then(m => m.GoalsPageModule)
     },
     {
         path: 'levels',
-        loadChildren: () => Promise.all(/*! import() | pages-levels-levels-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-levels-levels-module")]).then(__webpack_require__.bind(null, /*! ./pages/levels/levels.module */ "./src/app/pages/levels/levels.module.ts")).then(m => m.LevelsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-levels-levels-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-levels-levels-module")]).then(__webpack_require__.bind(null, /*! ./pages/levels/levels.module */ "./src/app/pages/levels/levels.module.ts")).then(m => m.LevelsPageModule)
     },
     {
         path: 'tags',
-        loadChildren: () => Promise.all(/*! import() | pages-tags-tags-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-tags-tags-module")]).then(__webpack_require__.bind(null, /*! ./pages/tags/tags.module */ "./src/app/pages/tags/tags.module.ts")).then(m => m.TagsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-tags-tags-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-tags-tags-module")]).then(__webpack_require__.bind(null, /*! ./pages/tags/tags.module */ "./src/app/pages/tags/tags.module.ts")).then(m => m.TagsPageModule)
     },
     {
         path: 'categories',
-        loadChildren: () => Promise.all(/*! import() | pages-categories-categories-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-categories-categories-module")]).then(__webpack_require__.bind(null, /*! ./pages/categories/categories.module */ "./src/app/pages/categories/categories.module.ts")).then(m => m.CategoriesPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-categories-categories-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-categories-categories-module")]).then(__webpack_require__.bind(null, /*! ./pages/categories/categories.module */ "./src/app/pages/categories/categories.module.ts")).then(m => m.CategoriesPageModule)
     },
     {
         path: 'equipments',
-        loadChildren: () => Promise.all(/*! import() | pages-equipments-equipments-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-equipments-equipments-module")]).then(__webpack_require__.bind(null, /*! ./pages/equipments/equipments.module */ "./src/app/pages/equipments/equipments.module.ts")).then(m => m.EquipmentsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-equipments-equipments-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-equipments-equipments-module")]).then(__webpack_require__.bind(null, /*! ./pages/equipments/equipments.module */ "./src/app/pages/equipments/equipments.module.ts")).then(m => m.EquipmentsPageModule)
     },
     {
         path: 'bodyparts',
-        loadChildren: () => Promise.all(/*! import() | pages-bodyparts-bodyparts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-bodyparts-bodyparts-module")]).then(__webpack_require__.bind(null, /*! ./pages/bodyparts/bodyparts.module */ "./src/app/pages/bodyparts/bodyparts.module.ts")).then(m => m.BodypartsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-bodyparts-bodyparts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-bodyparts-bodyparts-module")]).then(__webpack_require__.bind(null, /*! ./pages/bodyparts/bodyparts.module */ "./src/app/pages/bodyparts/bodyparts.module.ts")).then(m => m.BodypartsPageModule)
     },
     {
         path: 'wgoals/:id/:title',
-        loadChildren: () => Promise.all(/*! import() | pages-wgoals-wgoals-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-wgoals-wgoals-module")]).then(__webpack_require__.bind(null, /*! ./pages/wgoals/wgoals.module */ "./src/app/pages/wgoals/wgoals.module.ts")).then(m => m.WgoalsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-wgoals-wgoals-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-wgoals-wgoals-module")]).then(__webpack_require__.bind(null, /*! ./pages/wgoals/wgoals.module */ "./src/app/pages/wgoals/wgoals.module.ts")).then(m => m.WgoalsPageModule)
     },
     {
         path: 'wlevels/:id/:title',
-        loadChildren: () => Promise.all(/*! import() | pages-wlevels-wlevels-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-wlevels-wlevels-module")]).then(__webpack_require__.bind(null, /*! ./pages/wlevels/wlevels.module */ "./src/app/pages/wlevels/wlevels.module.ts")).then(m => m.WlevelsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-wlevels-wlevels-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-wlevels-wlevels-module")]).then(__webpack_require__.bind(null, /*! ./pages/wlevels/wlevels.module */ "./src/app/pages/wlevels/wlevels.module.ts")).then(m => m.WlevelsPageModule)
     },
     {
         path: 'ebodyparts/:id/:title',
-        loadChildren: () => Promise.all(/*! import() | pages-ebodyparts-ebodyparts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-ebodyparts-ebodyparts-module")]).then(__webpack_require__.bind(null, /*! ./pages/ebodyparts/ebodyparts.module */ "./src/app/pages/ebodyparts/ebodyparts.module.ts")).then(m => m.EbodypartsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-ebodyparts-ebodyparts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-ebodyparts-ebodyparts-module")]).then(__webpack_require__.bind(null, /*! ./pages/ebodyparts/ebodyparts.module */ "./src/app/pages/ebodyparts/ebodyparts.module.ts")).then(m => m.EbodypartsPageModule)
     },
     {
         path: 'cdiets/:id/:title',
-        loadChildren: () => Promise.all(/*! import() | pages-cdiets-cdiets-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-cdiets-cdiets-module")]).then(__webpack_require__.bind(null, /*! ./pages/cdiets/cdiets.module */ "./src/app/pages/cdiets/cdiets.module.ts")).then(m => m.CdietsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-cdiets-cdiets-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-cdiets-cdiets-module")]).then(__webpack_require__.bind(null, /*! ./pages/cdiets/cdiets.module */ "./src/app/pages/cdiets/cdiets.module.ts")).then(m => m.CdietsPageModule)
     },
     {
         path: 'tposts/:id/:title',
-        loadChildren: () => Promise.all(/*! import() | pages-tposts-tposts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-tposts-tposts-module")]).then(__webpack_require__.bind(null, /*! ./pages/tposts/tposts.module */ "./src/app/pages/tposts/tposts.module.ts")).then(m => m.TpostsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-tposts-tposts-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-tposts-tposts-module")]).then(__webpack_require__.bind(null, /*! ./pages/tposts/tposts.module */ "./src/app/pages/tposts/tposts.module.ts")).then(m => m.TpostsPageModule)
     },
     {
         path: 'eequipments/:id/:title',
-        loadChildren: () => Promise.all(/*! import() | pages-eequipments-eequipments-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-eequipments-eequipments-module")]).then(__webpack_require__.bind(null, /*! ./pages/eequipments/eequipments.module */ "./src/app/pages/eequipments/eequipments.module.ts")).then(m => m.EequipmentsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-eequipments-eequipments-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-eequipments-eequipments-module")]).then(__webpack_require__.bind(null, /*! ./pages/eequipments/eequipments.module */ "./src/app/pages/eequipments/eequipments.module.ts")).then(m => m.EequipmentsPageModule)
     },
     {
         path: 'edetails/:id',
-        loadChildren: () => Promise.all(/*! import() | pages-edetails-edetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-edetails-edetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/edetails/edetails.module */ "./src/app/pages/edetails/edetails.module.ts")).then(m => m.EdetailsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-edetails-edetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-edetails-edetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/edetails/edetails.module */ "./src/app/pages/edetails/edetails.module.ts")).then(m => m.EdetailsPageModule)
     },
     {
         path: 'wdetails/:id',
-        loadChildren: () => Promise.all(/*! import() | pages-wdetails-wdetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("common"), __webpack_require__.e("pages-wdetails-wdetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/wdetails/wdetails.module */ "./src/app/pages/wdetails/wdetails.module.ts")).then(m => m.WdetailsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-wdetails-wdetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("common"), __webpack_require__.e("pages-wdetails-wdetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/wdetails/wdetails.module */ "./src/app/pages/wdetails/wdetails.module.ts")).then(m => m.WdetailsPageModule)
     },
     {
         path: 'ddetails/:id',
-        loadChildren: () => Promise.all(/*! import() | pages-ddetails-ddetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-ddetails-ddetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/ddetails/ddetails.module */ "./src/app/pages/ddetails/ddetails.module.ts")).then(m => m.DdetailsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-ddetails-ddetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-ddetails-ddetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/ddetails/ddetails.module */ "./src/app/pages/ddetails/ddetails.module.ts")).then(m => m.DdetailsPageModule)
     },
     {
         path: 'pdetails/:id',
-        loadChildren: () => Promise.all(/*! import() | pages-pdetails-pdetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-pdetails-pdetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/pdetails/pdetails.module */ "./src/app/pages/pdetails/pdetails.module.ts")).then(m => m.PdetailsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-pdetails-pdetails-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-pdetails-pdetails-module")]).then(__webpack_require__.bind(null, /*! ./pages/pdetails/pdetails.module */ "./src/app/pages/pdetails/pdetails.module.ts")).then(m => m.PdetailsPageModule)
     },
     {
         path: 'weday/:id/:day',
-        loadChildren: () => Promise.all(/*! import() | pages-weday-weday-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-weday-weday-module")]).then(__webpack_require__.bind(null, /*! ./pages/weday/weday.module */ "./src/app/pages/weday/weday.module.ts")).then(m => m.WedayPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-weday-weday-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-weday-weday-module")]).then(__webpack_require__.bind(null, /*! ./pages/weday/weday.module */ "./src/app/pages/weday/weday.module.ts")).then(m => m.WedayPageModule)
     },
     {
         path: 'aboutus',
-        loadChildren: () => Promise.all(/*! import() | pages-aboutus-aboutus-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-aboutus-aboutus-module")]).then(__webpack_require__.bind(null, /*! ./pages/aboutus/aboutus.module */ "./src/app/pages/aboutus/aboutus.module.ts")).then(m => m.AboutusPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-aboutus-aboutus-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-aboutus-aboutus-module")]).then(__webpack_require__.bind(null, /*! ./pages/aboutus/aboutus.module */ "./src/app/pages/aboutus/aboutus.module.ts")).then(m => m.AboutusPageModule)
     },
     {
         path: 'about',
-        loadChildren: () => Promise.all(/*! import() | pages-about-about-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-about-about-module")]).then(__webpack_require__.bind(null, /*! ./pages/about/about.module */ "./src/app/pages/about/about.module.ts")).then(m => m.AboutPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-about-about-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-about-about-module")]).then(__webpack_require__.bind(null, /*! ./pages/about/about.module */ "./src/app/pages/about/about.module.ts")).then(m => m.AboutPageModule)
     },
     {
         path: 'terms',
-        loadChildren: () => Promise.all(/*! import() | pages-terms-terms-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-terms-terms-module")]).then(__webpack_require__.bind(null, /*! ./pages/terms/terms.module */ "./src/app/pages/terms/terms.module.ts")).then(m => m.TermsPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-terms-terms-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-terms-terms-module")]).then(__webpack_require__.bind(null, /*! ./pages/terms/terms.module */ "./src/app/pages/terms/terms.module.ts")).then(m => m.TermsPageModule)
     },
     {
         path: 'contact',
-        loadChildren: () => Promise.all(/*! import() | pages-contact-contact-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-contact-contact-module")]).then(__webpack_require__.bind(null, /*! ./pages/contact/contact.module */ "./src/app/pages/contact/contact.module.ts")).then(m => m.ContactPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-contact-contact-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-contact-contact-module")]).then(__webpack_require__.bind(null, /*! ./pages/contact/contact.module */ "./src/app/pages/contact/contact.module.ts")).then(m => m.ContactPageModule)
     },
     {
         path: 'loader',
-        loadChildren: () => Promise.all(/*! import() | pages-loader-loader-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("pages-loader-loader-module")]).then(__webpack_require__.bind(null, /*! ./pages/loader/loader.module */ "./src/app/pages/loader/loader.module.ts")).then(m => m.LoaderPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-loader-loader-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-loader-loader-module")]).then(__webpack_require__.bind(null, /*! ./pages/loader/loader.module */ "./src/app/pages/loader/loader.module.ts")).then(m => m.LoaderPageModule)
     },
     {
         path: 'winfo',
-        loadChildren: () => Promise.all(/*! import() | pages-winfo-winfo-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-bmiinfo-bmiinfo-module~pages-bod~c925c87c"), __webpack_require__.e("common")]).then(__webpack_require__.bind(null, /*! ./pages/winfo/winfo.module */ "./src/app/pages/winfo/winfo.module.ts")).then(m => m.WinfoPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-winfo-winfo-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("common")]).then(__webpack_require__.bind(null, /*! ./pages/winfo/winfo.module */ "./src/app/pages/winfo/winfo.module.ts")).then(m => m.WinfoPageModule)
     },
     {
         path: 'packages',
@@ -641,6 +663,30 @@ const routes = [
     {
         path: 'pay-stripe/:id',
         loadChildren: () => __webpack_require__.e(/*! import() | pages-pay-stripe-pay-stripe-module */ "pages-pay-stripe-pay-stripe-module").then(__webpack_require__.bind(null, /*! ./pages/pay-stripe/pay-stripe.module */ "./src/app/pages/pay-stripe/pay-stripe.module.ts")).then(m => m.PayStripePageModule)
+    },
+    {
+        path: 'mycards',
+        loadChildren: () => Promise.all(/*! import() | pages-mycards-mycards-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-mycards-mycards-module")]).then(__webpack_require__.bind(null, /*! ./pages/mycards/mycards.module */ "./src/app/pages/mycards/mycards.module.ts")).then(m => m.MycardsPageModule)
+    },
+    {
+        path: 'addcard',
+        loadChildren: () => Promise.all(/*! import() | pages-addcard-addcard-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-addcard-addcard-module")]).then(__webpack_require__.bind(null, /*! ./pages/addcard/addcard.module */ "./src/app/pages/addcard/addcard.module.ts")).then(m => m.AddcardPageModule)
+    },
+    {
+        path: 'editcard/:id',
+        loadChildren: () => Promise.all(/*! import() | pages-editcard-editcard-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-editcard-editcard-module")]).then(__webpack_require__.bind(null, /*! ./pages/editcard/editcard.module */ "./src/app/pages/editcard/editcard.module.ts")).then(m => m.EditcardPageModule)
+    },
+    {
+        path: 'confirmdelete',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-confirmdelete-confirmdelete-module */ "pages-confirmdelete-confirmdelete-module").then(__webpack_require__.bind(null, /*! ./pages/confirmdelete/confirmdelete.module */ "./src/app/pages/confirmdelete/confirmdelete.module.ts")).then(m => m.ConfirmdeletePageModule)
+    },
+    {
+        path: 'subscriptions',
+        loadChildren: () => Promise.all(/*! import() | pages-subscriptions-subscriptions-module */[__webpack_require__.e("default~pages-about-about-module~pages-aboutus-aboutus-module~pages-addcard-addcard-module~pages-bmi~9440a62e"), __webpack_require__.e("pages-subscriptions-subscriptions-module")]).then(__webpack_require__.bind(null, /*! ./pages/subscriptions/subscriptions.module */ "./src/app/pages/subscriptions/subscriptions.module.ts")).then(m => m.SubscriptionsPageModule)
+    },
+    {
+        path: 'videoview',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-videoview-videoview-module */ "pages-videoview-videoview-module").then(__webpack_require__.bind(null, /*! ./pages/videoview/videoview.module */ "./src/app/pages/videoview/videoview.module.ts")).then(m => m.VideoviewPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -686,8 +732,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/es2015/index.js");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var _config_strings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./config/strings */ "./src/app/config/strings.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _config_strings__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./config/strings */ "./src/app/config/strings.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
@@ -698,7 +746,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, navCtrl, splashScreen, statusBar, router, afAuth, authService, alertController) {
+    constructor(platform, navCtrl, splashScreen, statusBar, router, afAuth, authService, alertController, DataService) {
         this.platform = platform;
         this.navCtrl = navCtrl;
         this.splashScreen = splashScreen;
@@ -707,26 +755,27 @@ let AppComponent = class AppComponent {
         this.afAuth = afAuth;
         this.authService = authService;
         this.alertController = alertController;
+        this.DataService = DataService;
         this.errors = ['', null, undefined];
-        this.signout = _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST8;
+        this.signout = _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST8;
         this.appPages = [
             {
-                title: _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST1,
+                title: _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST10,
                 url: '/workouts',
                 icon: 'md-calendar'
             },
             {
-                title: _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST2,
+                title: _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST2,
                 url: '/exercises',
                 icon: 'md-fitness'
             },
             {
-                title: _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST3,
+                title: _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST3,
                 url: '/diets',
                 icon: 'md-restaurant'
             },
             {
-                title: _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST4,
+                title: _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST4,
                 url: '/posts',
                 icon: 'md-list-box'
             },
@@ -736,19 +785,29 @@ let AppComponent = class AppComponent {
               icon: 'md-quote'
             }, */
             {
-                title: _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST105,
+                title: _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST105,
                 url: '/calculator',
                 icon: 'md-calculator'
             },
             {
-                title: _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST6,
+                title: _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST6,
                 url: '/profile',
                 icon: 'md-person'
             },
             {
-                title: _config_strings__WEBPACK_IMPORTED_MODULE_7__["strings"].ST7,
+                title: _config_strings__WEBPACK_IMPORTED_MODULE_8__["strings"].ST7,
                 url: '/aboutus',
                 icon: 'md-bookmark'
+            },
+            {
+                title: 'Manage Cards',
+                url: '/mycards',
+                icon: 'md-card'
+            },
+            {
+                title: 'Subscriptions',
+                url: '/subscriptions',
+                icon: 'md-card'
             },
         ];
         this.initializeApp();
@@ -757,13 +816,24 @@ let AppComponent = class AppComponent {
         this.platform.ready().then(() => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             yield this.afAuth.user.subscribe(user => {
                 if (user) {
-                    this.paid = localStorage.getItem('user_paid');
-                    if (this.errors.indexOf(this.paid) == -1) {
-                        this.router.navigate(['/home']);
-                    }
-                    else {
-                        this.router.navigate(['/plans']);
-                    }
+                    this.DataService.getuserdetails(user.email)
+                        .subscribe(resp => {
+                        if (resp['ok'] == 'ok') {
+                            this.router.navigate(['/home']);
+                        }
+                        else {
+                            this.router.navigate(['/plans']);
+                        }
+                    });
+                    /* this.paid=localStorage.getItem('user_paid');
+                    
+                    if(this.errors.indexOf(this.paid)==-1)
+                    {
+                      this.router.navigate(['/home']);
+                    }else
+                    {
+                         this.router.navigate(['/plans']);
+                    } */
                 }
                 else {
                     this.router.navigate(['/start']);
@@ -792,10 +862,11 @@ AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"] },
     { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"] },
     { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"] },
     { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"] },
     { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
+    { type: _services_data_service__WEBPACK_IMPORTED_MODULE_7__["DataService"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -807,10 +878,11 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"],
         _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"],
         _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"],
         _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"],
         _services_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"],
-        _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"]])
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
+        _services_data_service__WEBPACK_IMPORTED_MODULE_7__["DataService"]])
 ], AppComponent);
 
 
@@ -853,6 +925,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
 /* harmony import */ var _ionic_native_stripe_ngx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ionic-native/stripe/ngx */ "./node_modules/@ionic-native/stripe/ngx/index.js");
 /* harmony import */ var _pages_paymentoptions_paymentoptions_page__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/paymentoptions/paymentoptions.page */ "./src/app/pages/paymentoptions/paymentoptions.page.ts");
+/* harmony import */ var _pages_confirmdelete_confirmdelete_page__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/confirmdelete/confirmdelete.page */ "./src/app/pages/confirmdelete/confirmdelete.page.ts");
+/* harmony import */ var _pages_videoview_videoview_page__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/videoview/videoview.page */ "./src/app/pages/videoview/videoview.page.ts");
+/* harmony import */ var ngx_embed_video__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ngx-embed-video */ "./node_modules/ngx-embed-video/dist/index.js");
+/* harmony import */ var ngx_embed_video__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(ngx_embed_video__WEBPACK_IMPORTED_MODULE_28__);
+
+
+
 
 
 
@@ -883,9 +962,10 @@ let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _pages_paymentoptions_paymentoptions_page__WEBPACK_IMPORTED_MODULE_25__["PaymentoptionsPage"]],
-        entryComponents: [_pages_paymentoptions_paymentoptions_page__WEBPACK_IMPORTED_MODULE_25__["PaymentoptionsPage"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _pages_paymentoptions_paymentoptions_page__WEBPACK_IMPORTED_MODULE_25__["PaymentoptionsPage"], _pages_confirmdelete_confirmdelete_page__WEBPACK_IMPORTED_MODULE_26__["ConfirmdeletePage"], _pages_videoview_videoview_page__WEBPACK_IMPORTED_MODULE_27__["VideoviewPage"]],
+        entryComponents: [_pages_paymentoptions_paymentoptions_page__WEBPACK_IMPORTED_MODULE_25__["PaymentoptionsPage"], _pages_confirmdelete_confirmdelete_page__WEBPACK_IMPORTED_MODULE_26__["ConfirmdeletePage"], _pages_videoview_videoview_page__WEBPACK_IMPORTED_MODULE_27__["VideoviewPage"]],
         imports: [
+            ngx_embed_video__WEBPACK_IMPORTED_MODULE_28__["EmbedVideo"].forRoot(),
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
             _ionic_storage__WEBPACK_IMPORTED_MODULE_18__["IonicStorageModule"].forRoot(),
@@ -916,6 +996,34 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], AppModule);
 
+
+
+/***/ }),
+
+/***/ "./src/app/config/config.ts":
+/*!**********************************!*\
+  !*** ./src/app/config/config.ts ***!
+  \**********************************/
+/*! exports provided: config */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+const config = {
+    // backend url
+    Url: 'http://dev.indiit.solutions/fitness-app/',
+    // facebook page url
+    Facebook: 'https://facebook.com',
+    // youtube page url
+    Youtube: 'https://youtube.com',
+    // twitter page url
+    Twitter: 'https://twitter.com',
+    // twitter page url
+    Instagram: 'https://instagram.com',
+    // admob banner id   
+    BannerId: 'ca-app-pub-3940256099942544/6300978111',
+};
 
 
 /***/ }),
@@ -1100,6 +1208,113 @@ const strings = {
 
 /***/ }),
 
+/***/ "./src/app/pages/confirmdelete/confirmdelete.page.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/pages/confirmdelete/confirmdelete.page.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "ion-content {\n  --background: var(--ion-color-grey3); }\n  ion-content ion-header {\n    position: relative; }\n  ion-content ion-header:after {\n      display: none; }\n  ion-content ion-header ion-toolbar {\n      --background: #ececec;\n      padding: 25px 10px 50px;\n      color: #292929;\n      --min-height: 28px; }\n  ion-content ion-header ion-toolbar ion-back-button {\n        color: #292929;\n        font-size: 20px; }\n  ion-content ion-header ion-toolbar ion-buttons {\n        font-size: 20px;\n        min-width: 30px;\n        max-width: 30px;\n        min-height: 30px;\n        max-height: 30px;\n        display: -webkit-inline-box;\n        display: inline-flex;\n        border-radius: 50%;\n        background: rgba(227, 27, 35, 0.08);\n        -webkit-box-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n                align-items: center;\n        outline: 0px;\n        color: #e31b23; }\n  ion-content ion-header ion-toolbar ion-title {\n        font-size: 18px; }\n  ion-content .date-cont {\n    position: relative;\n    z-index: 11;\n    padding: 30px 20px 0;\n    border-radius: 25px 25px 0px 0px;\n    margin-top: -30px;\n    background: var(--ion-color-grey3); }\n  ion-content .date-cont ion-item-sliding {\n      background: var(--ion-color-white);\n      width: 100%;\n      padding: 0px;\n      border-radius: 12px;\n      box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.07);\n      margin-bottom: 20px; }\n  ion-content .date-cont ion-item-sliding ion-item {\n        --background: white;\n        --padding-start: 0px;\n        --inner-padding-end: 0px;\n        padding: 15px;\n        background: #fff; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label {\n          margin: 0px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits {\n            width: 100%; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips {\n              display: -webkit-box;\n              display: flex;\n              -webkit-box-align: center;\n                      align-items: center;\n              -webkit-box-pack: justify;\n                      justify-content: space-between;\n              margin-bottom: 15px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips p {\n                font-size: 10px;\n                text-transform: uppercase;\n                letter-spacing: 1px;\n                margin: 0px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips p span {\n                  display: block;\n                  font-size: 13px;\n                  font-weight: 500;\n                  letter-spacing: 2px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips img.visa-s {\n                max-width: 38px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .accnt-nusm {\n              color: var(--ion-color-grey1);\n              display: -webkit-box;\n              display: flex;\n              -webkit-box-align: center;\n                      align-items: center;\n              -webkit-box-pack: justify;\n                      justify-content: space-between;\n              margin: 0px 5px 0px 0px;\n              letter-spacing: 3px;\n              font-size: 12px;\n              font-weight: 500; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .tst-lta {\n              color: var(--ion-color-grey1); }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .tst-lta p {\n                font-size: 10px;\n                text-transform: uppercase;\n                letter-spacing: 1px;\n                margin: 0px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .tst-lta p span {\n                  display: block;\n                  font-size: 13px;\n                  font-weight: 500;\n                  letter-spacing: 2px; }\n  ion-content .date-cont ion-item-sliding ion-item-options ion-item-option {\n        padding: 0px 1px;\n        font-size: 20px;\n        outline: 0px; }\n  ion-content .cenys {\n    text-align: center;\n    padding: 20px;\n    border-radius: 30px 30px 0 0;\n    margin-top: -29px;\n    z-index: 11;\n    position: relative;\n    background: #fff; }\n  ion-content .cenys p {\n      font-size: 21px;\n      font-weight: 600;\n      margin-bottom: 12px; }\n  ion-content .cenys span {\n      display: block;\n      font-size: 14px;\n      color: #757575;\n      margin-bottom: 17px; }\n  ion-content .cenys ion-button {\n      min-height: 46px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY29uZmlybWRlbGV0ZS9FOlxcZml0bmVzcy1hcHAtY29kZS1kZWxpdmVyeS9zcmNcXGFwcFxccGFnZXNcXGNvbmZpcm1kZWxldGVcXGNvbmZpcm1kZWxldGUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksb0NBQWEsRUFBQTtFQURqQjtJQUlLLGtCQUFrQixFQUFBO0VBSnZCO01BT00sYUFBWSxFQUFBO0VBUGxCO01BV0cscUJBQWE7TUFDYix1QkFBdUI7TUFDdkIsY0FBYztNQUNkLGtCQUFhLEVBQUE7RUFkaEI7UUFpQkksY0FBYTtRQUNiLGVBQWMsRUFBQTtFQWxCbEI7UUFzQkksZUFBZTtRQUNmLGVBQWU7UUFDZixlQUFlO1FBQ2YsZ0JBQWdCO1FBQ2hCLGdCQUFnQjtRQUNoQiwyQkFBb0I7UUFBcEIsb0JBQW9CO1FBQ3BCLGtCQUFrQjtRQUNsQixtQ0FBbUM7UUFDbkMsd0JBQXVCO2dCQUF2Qix1QkFBdUI7UUFDdkIseUJBQW1CO2dCQUFuQixtQkFBbUI7UUFDbkIsWUFBWTtRQUNaLGNBQWMsRUFBQTtFQWpDbEI7UUFxQ0ksZUFBZSxFQUFBO0VBckNuQjtJQTJDRSxrQkFBa0I7SUFDbEIsV0FBVTtJQUNWLG9CQUFvQjtJQUNwQixnQ0FBZ0M7SUFDaEMsaUJBQWlCO0lBQ2pCLGtDQUFrQyxFQUFBO0VBaERwQztNQW1ERyxrQ0FBa0M7TUFDbEMsV0FBVztNQUNYLFlBQVk7TUFDWixtQkFBbUI7TUFDbkIsNENBQTRDO01BQ25DLG1CQUFtQixFQUFBO0VBeEQvQjtRQTJETyxtQkFBYTtRQUNoQixvQkFBZ0I7UUFDaEIsd0JBQW9CO1FBQ3BCLGFBQWE7UUFDYixnQkFBZ0IsRUFBQTtFQS9EcEI7VUFrRUssV0FBVSxFQUFBO0VBbEVmO1lBcUVNLFdBQVcsRUFBQTtFQXJFakI7Y0F3RU8sb0JBQWE7Y0FBYixhQUFhO2NBQ2IseUJBQW1CO3NCQUFuQixtQkFBbUI7Y0FDbkIseUJBQThCO3NCQUE5Qiw4QkFBOEI7Y0FDM0IsbUJBQW1CLEVBQUE7RUEzRTdCO2dCQTZFUSxlQUFlO2dCQUNmLHlCQUF5QjtnQkFDekIsbUJBQW1CO2dCQUNuQixXQUFXLEVBQUE7RUFoRm5CO2tCQWtGUyxjQUFjO2tCQUNkLGVBQWU7a0JBQ2YsZ0JBQWdCO2tCQUNoQixtQkFBbUIsRUFBQTtFQXJGNUI7Z0JBMEZRLGVBQWUsRUFBQTtFQTFGdkI7Y0ErRk8sNkJBQTZCO2NBQzdCLG9CQUFhO2NBQWIsYUFBYTtjQUNiLHlCQUFtQjtzQkFBbkIsbUJBQW1CO2NBQ25CLHlCQUE4QjtzQkFBOUIsOEJBQThCO2NBQzlCLHVCQUF1QjtjQUN2QixtQkFBbUI7Y0FDbkIsZUFBZTtjQUNmLGdCQUFnQixFQUFBO0VBdEd2QjtjQTBHTyw2QkFBNkIsRUFBQTtFQTFHcEM7Z0JBNEdRLGVBQWU7Z0JBQ2YseUJBQXlCO2dCQUN6QixtQkFBbUI7Z0JBQ25CLFdBQVcsRUFBQTtFQS9HbkI7a0JBaUhTLGNBQWM7a0JBQ2QsZUFBZTtrQkFDZixnQkFBZ0I7a0JBQ2hCLG1CQUFtQixFQUFBO0VBcEg1QjtRQStIUSxnQkFBZ0I7UUFDbkIsZUFBZTtRQUNmLFlBQVksRUFBQTtFQWpJakI7SUF1SUUsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYiw0QkFBNEI7SUFDNUIsaUJBQWlCO0lBQ2pCLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsZ0JBQWdCLEVBQUE7RUE3SWxCO01BK0lHLGVBQWU7TUFDZixnQkFBZ0I7TUFDaEIsbUJBQW1CLEVBQUE7RUFqSnRCO01Bb0pHLGNBQWM7TUFDZCxlQUFlO01BQ2YsY0FBYztNQUNkLG1CQUFtQixFQUFBO0VBdkp0QjtNQTBKRyxnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NvbmZpcm1kZWxldGUvY29uZmlybWRlbGV0ZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCB7XHJcbiAgICAtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1ncmV5Myk7XHJcblx0aW9uLWhlYWRlclxyXG5cdHtcclxuXHQgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgICY6YWZ0ZXJcclxuICAgICAgICB7XHJcblx0XHQgICAgZGlzcGxheTpub25lO1xyXG5cdFx0fVx0XHRcclxuXHRcdGlvbi10b29sYmFyXHJcblx0XHR7XHJcblx0XHRcdC0tYmFja2dyb3VuZDogI2VjZWNlYztcclxuXHRcdFx0cGFkZGluZzogMjVweCAxMHB4IDUwcHg7XHJcblx0XHRcdGNvbG9yOiAjMjkyOTI5O1xyXG5cdFx0XHQtLW1pbi1oZWlnaHQ6IDI4cHg7XHJcblx0XHRcdGlvbi1iYWNrLWJ1dHRvblxyXG5cdFx0XHR7XHJcblx0XHRcdFx0Y29sb3I6IzI5MjkyOTtcclxuXHRcdFx0XHRmb250LXNpemU6MjBweDtcclxuXHRcdFx0fVx0XHRcdFxyXG5cdFx0XHRpb24tYnV0dG9uc1xyXG5cdFx0XHR7XHJcblx0XHRcdFx0Zm9udC1zaXplOiAyMHB4O1xyXG5cdFx0XHRcdG1pbi13aWR0aDogMzBweDtcclxuXHRcdFx0XHRtYXgtd2lkdGg6IDMwcHg7XHJcblx0XHRcdFx0bWluLWhlaWdodDogMzBweDtcclxuXHRcdFx0XHRtYXgtaGVpZ2h0OiAzMHB4O1xyXG5cdFx0XHRcdGRpc3BsYXk6IGlubGluZS1mbGV4O1xyXG5cdFx0XHRcdGJvcmRlci1yYWRpdXM6IDUwJTtcclxuXHRcdFx0XHRiYWNrZ3JvdW5kOiByZ2JhKDIyNywgMjcsIDM1LCAwLjA4KTtcclxuXHRcdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuXHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdFx0XHRcdG91dGxpbmU6IDBweDtcclxuXHRcdFx0XHRjb2xvcjogI2UzMWIyMztcclxuXHRcdFx0fVxyXG5cdFx0XHRpb24tdGl0bGVcclxuXHRcdFx0e1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMThweDtcclxuXHRcdFx0fVxyXG5cdFx0fVxyXG5cdH1cclxuXHQuZGF0ZS1jb250IFxyXG5cdHtcclxuXHRcdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHRcdHotaW5kZXg6MTE7XHJcblx0XHRwYWRkaW5nOiAzMHB4IDIwcHggMDtcclxuXHRcdGJvcmRlci1yYWRpdXM6IDI1cHggMjVweCAwcHggMHB4O1xyXG5cdFx0bWFyZ2luLXRvcDogLTMwcHg7XHJcblx0XHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItZ3JleTMpO1x0XHJcblx0XHRpb24taXRlbS1zbGlkaW5nXHJcblx0XHR7XHJcblx0XHRcdGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci13aGl0ZSk7XHJcblx0XHRcdHdpZHRoOiAxMDAlO1xyXG5cdFx0XHRwYWRkaW5nOiAwcHg7XHJcblx0XHRcdGJvcmRlci1yYWRpdXM6IDEycHg7XHJcblx0XHRcdGJveC1zaGFkb3c6IDFweCA0cHggMTBweCByZ2JhKDAsIDAsIDAsIDAuMDcpO1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAyMHB4OyAgICBcdFx0XHRcclxuXHRcdFx0aW9uLWl0ZW1cclxuXHRcdFx0e1xyXG5cdFx0XHQgICAgLS1iYWNrZ3JvdW5kOiB3aGl0ZTtcclxuXHRcdFx0XHQtLXBhZGRpbmctc3RhcnQ6IDBweDtcclxuXHRcdFx0XHQtLWlubmVyLXBhZGRpbmctZW5kOiAwcHg7XHJcblx0XHRcdFx0cGFkZGluZzogMTVweDtcclxuXHRcdFx0XHRiYWNrZ3JvdW5kOiAjZmZmO1x0XHRcdFxyXG5cdFx0XHRcdGlvbi1sYWJlbFxyXG5cdFx0XHRcdHtcclxuXHRcdFx0XHRcdG1hcmdpbjowcHg7XHRcdFxyXG5cdFx0XHRcdFx0LmJveC1jcmRpdHMgXHJcblx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHRcdHdpZHRoOiAxMDAlO1xyXG5cdFx0XHRcdFx0XHQudG9wLWNpcHMgXHJcblx0XHRcdFx0XHRcdHtcclxuXHRcdFx0XHRcdFx0XHRkaXNwbGF5OiBmbGV4O1xyXG5cdFx0XHRcdFx0XHRcdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0XHRcdFx0XHRcdFx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cdFx0XHRcdFx0XHQgICAgbWFyZ2luLWJvdHRvbTogMTVweDtcdFxyXG5cdFx0XHRcdFx0XHRcdHAge1xyXG5cdFx0XHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxMHB4O1xyXG5cdFx0XHRcdFx0XHRcdFx0dGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuXHRcdFx0XHRcdFx0XHRcdGxldHRlci1zcGFjaW5nOiAxcHg7XHJcblx0XHRcdFx0XHRcdFx0XHRtYXJnaW46IDBweDtcclxuXHRcdFx0XHRcdFx0XHRcdHNwYW4ge1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRkaXNwbGF5OiBibG9jaztcclxuXHRcdFx0XHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxM3B4O1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRmb250LXdlaWdodDogNTAwO1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRsZXR0ZXItc3BhY2luZzogMnB4O1xyXG5cdFx0XHRcdFx0XHRcdFx0fVxyXG5cdFx0XHRcdFx0XHRcdH1cclxuXHRcdFx0XHRcdFx0XHRpbWcudmlzYS1zIFxyXG5cdFx0XHRcdFx0XHRcdHtcclxuXHRcdFx0XHRcdFx0XHRcdG1heC13aWR0aDogMzhweDtcclxuXHRcdFx0XHRcdFx0XHR9XHJcblx0XHRcdFx0XHRcdH1cclxuXHRcdFx0XHRcdFx0LmFjY250LW51c20gXHJcblx0XHRcdFx0XHRcdHtcclxuXHRcdFx0XHRcdFx0XHRjb2xvcjogdmFyKC0taW9uLWNvbG9yLWdyZXkxKTtcclxuXHRcdFx0XHRcdFx0XHRkaXNwbGF5OiBmbGV4O1xyXG5cdFx0XHRcdFx0XHRcdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0XHRcdFx0XHRcdFx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cdFx0XHRcdFx0XHRcdG1hcmdpbjogMHB4IDVweCAwcHggMHB4O1xyXG5cdFx0XHRcdFx0XHRcdGxldHRlci1zcGFjaW5nOiAzcHg7XHJcblx0XHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxMnB4O1xyXG5cdFx0XHRcdFx0XHRcdGZvbnQtd2VpZ2h0OiA1MDA7XHJcblx0XHRcdFx0XHRcdH1cclxuXHRcdFx0XHRcdFx0LnRzdC1sdGEgXHJcblx0XHRcdFx0XHRcdHtcclxuXHRcdFx0XHRcdFx0XHRjb2xvcjogdmFyKC0taW9uLWNvbG9yLWdyZXkxKTtcclxuXHRcdFx0XHRcdFx0XHRwIHtcclxuXHRcdFx0XHRcdFx0XHRcdGZvbnQtc2l6ZTogMTBweDtcclxuXHRcdFx0XHRcdFx0XHRcdHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcblx0XHRcdFx0XHRcdFx0XHRsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cdFx0XHRcdFx0XHRcdFx0bWFyZ2luOiAwcHg7XHJcblx0XHRcdFx0XHRcdFx0XHRzcGFuIHtcclxuXHRcdFx0XHRcdFx0XHRcdFx0ZGlzcGxheTogYmxvY2s7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGZvbnQtc2l6ZTogMTNweDtcclxuXHRcdFx0XHRcdFx0XHRcdFx0Zm9udC13ZWlnaHQ6IDUwMDtcclxuXHRcdFx0XHRcdFx0XHRcdFx0bGV0dGVyLXNwYWNpbmc6IDJweDtcclxuXHRcdFx0XHRcdFx0XHRcdH1cclxuXHRcdFx0XHRcdFx0XHR9XHJcblx0XHRcdFx0XHRcdH1cdFx0XHRcclxuXHRcdFx0XHRcdH1cdFx0XHJcblx0XHRcdFx0fVx0XHRcclxuXHRcdFx0fVxyXG4gICAgICAgICAgICBpb24taXRlbS1vcHRpb25zXHJcbiAgICAgICAgICAgIHtcclxuXHRcdFx0ICAgIGlvbi1pdGVtLW9wdGlvblxyXG5cdFx0XHRcdHtcclxuXHRcdFx0XHQgICAgcGFkZGluZzogMHB4IDFweDtcclxuXHRcdFx0XHRcdGZvbnQtc2l6ZTogMjBweDtcclxuXHRcdFx0XHRcdG91dGxpbmU6IDBweDtcclxuXHRcdFx0XHR9XHJcblx0XHRcdH1cdFx0XHRcclxuXHRcdH1cdFx0XHJcblx0fVx0XHJcblx0LmNlbnlzIHtcclxuXHRcdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRcdHBhZGRpbmc6IDIwcHg7XHJcblx0XHRib3JkZXItcmFkaXVzOiAzMHB4IDMwcHggMCAwO1xyXG5cdFx0bWFyZ2luLXRvcDogLTI5cHg7XHJcblx0XHR6LWluZGV4OiAxMTtcclxuXHRcdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHRcdGJhY2tncm91bmQ6ICNmZmY7XHJcblx0XHRwIHtcclxuXHRcdFx0Zm9udC1zaXplOiAyMXB4O1xyXG5cdFx0XHRmb250LXdlaWdodDogNjAwO1xyXG5cdFx0XHRtYXJnaW4tYm90dG9tOiAxMnB4O1xyXG5cdFx0fVxyXG5cdFx0c3BhbiB7XHJcblx0XHRcdGRpc3BsYXk6IGJsb2NrO1xyXG5cdFx0XHRmb250LXNpemU6IDE0cHg7XHJcblx0XHRcdGNvbG9yOiAjNzU3NTc1O1xyXG5cdFx0XHRtYXJnaW4tYm90dG9tOiAxN3B4O1xyXG5cdFx0fVxyXG5cdFx0aW9uLWJ1dHRvbiB7XHJcblx0XHRcdG1pbi1oZWlnaHQ6IDQ2cHg7XHJcblx0XHR9XHJcblx0fVxyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/pages/confirmdelete/confirmdelete.page.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/pages/confirmdelete/confirmdelete.page.ts ***!
+  \***********************************************************/
+/*! exports provided: ConfirmdeletePage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfirmdeletePage", function() { return ConfirmdeletePage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/data.service */ "./src/app/services/data.service.ts");
+
+
+
+
+let ConfirmdeletePage = class ConfirmdeletePage {
+    constructor(DataService, loadingController, modalController, navParams) {
+        this.DataService = DataService;
+        this.loadingController = loadingController;
+        this.modalController = modalController;
+        this.navParams = navParams;
+        this.id = navParams.get('id');
+    }
+    presentAlert(value) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const loading = yield this.loadingController.create({
+                spinner: null,
+                duration: 2000,
+                message: value,
+                mode: 'ios'
+            });
+            yield loading.present();
+        });
+    }
+    presentLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.loading = yield this.loadingController.create({
+                mode: "ios"
+            });
+            yield this.loading.present();
+        });
+    }
+    stopLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if (this.loading != undefined) {
+                yield this.loading.dismiss();
+            }
+            else {
+                var self = this;
+                setTimeout(function () {
+                    self.stopLoading();
+                }, 1000);
+            }
+        });
+    }
+    delete() {
+        this.presentLoading();
+        this.DataService.deletecard(this.id)
+            .subscribe(resp => {
+            this.stopLoading();
+            console.log(resp);
+            this.presentAlert('Card deleted successfully');
+            this.dismiss();
+        });
+    }
+    dismiss() {
+        this.modalController.dismiss({
+            'dismissed': true
+        });
+    }
+    ngOnInit() {
+    }
+};
+ConfirmdeletePage.ctorParameters = () => [
+    { type: _services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"] }
+];
+ConfirmdeletePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-confirmdelete',
+        template: __webpack_require__(/*! raw-loader!./confirmdelete.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/confirmdelete/confirmdelete.page.html"),
+        styles: [__webpack_require__(/*! ./confirmdelete.page.scss */ "./src/app/pages/confirmdelete/confirmdelete.page.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"]])
+], ConfirmdeletePage);
+
+
+
+/***/ }),
+
 /***/ "./src/app/pages/paymentoptions/paymentoptions.page.scss":
 /*!***************************************************************!*\
   !*** ./src/app/pages/paymentoptions/paymentoptions.page.scss ***!
@@ -1186,6 +1401,77 @@ PaymentoptionsPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"]])
 ], PaymentoptionsPage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/videoview/videoview.page.scss":
+/*!*****************************************************!*\
+  !*** ./src/app/pages/videoview/videoview.page.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "ion-content {\n  --background: var(--ion-color-grey3); }\n  ion-content ion-header {\n    position: relative; }\n  ion-content ion-header:after {\n      display: none; }\n  ion-content ion-header ion-toolbar {\n      --background: #ececec;\n      padding: 25px 10px 50px;\n      color: #292929;\n      --min-height: 28px; }\n  ion-content ion-header ion-toolbar ion-back-button {\n        color: #292929;\n        font-size: 20px; }\n  ion-content ion-header ion-toolbar ion-buttons {\n        font-size: 20px;\n        min-width: 30px;\n        max-width: 30px;\n        min-height: 30px;\n        max-height: 30px;\n        display: -webkit-inline-box;\n        display: inline-flex;\n        border-radius: 50%;\n        background: rgba(227, 27, 35, 0.08);\n        -webkit-box-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n                align-items: center;\n        outline: 0px;\n        color: #e31b23; }\n  ion-content ion-header ion-toolbar ion-title {\n        font-size: 18px; }\n  ion-content .date-cont {\n    position: relative;\n    z-index: 11;\n    padding: 30px 20px 0;\n    border-radius: 25px 25px 0px 0px;\n    margin-top: -30px;\n    background: var(--ion-color-grey3); }\n  ion-content .date-cont ion-item-sliding {\n      background: var(--ion-color-white);\n      width: 100%;\n      padding: 0px;\n      border-radius: 12px;\n      box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.07);\n      margin-bottom: 20px; }\n  ion-content .date-cont ion-item-sliding ion-item {\n        --background: white;\n        --padding-start: 0px;\n        --inner-padding-end: 0px;\n        padding: 15px;\n        background: #fff; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label {\n          margin: 0px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits {\n            width: 100%; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips {\n              display: -webkit-box;\n              display: flex;\n              -webkit-box-align: center;\n                      align-items: center;\n              -webkit-box-pack: justify;\n                      justify-content: space-between;\n              margin-bottom: 15px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips p {\n                font-size: 10px;\n                text-transform: uppercase;\n                letter-spacing: 1px;\n                margin: 0px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips p span {\n                  display: block;\n                  font-size: 13px;\n                  font-weight: 500;\n                  letter-spacing: 2px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .top-cips img.visa-s {\n                max-width: 38px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .accnt-nusm {\n              color: var(--ion-color-grey1);\n              display: -webkit-box;\n              display: flex;\n              -webkit-box-align: center;\n                      align-items: center;\n              -webkit-box-pack: justify;\n                      justify-content: space-between;\n              margin: 0px 5px 0px 0px;\n              letter-spacing: 3px;\n              font-size: 12px;\n              font-weight: 500; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .tst-lta {\n              color: var(--ion-color-grey1); }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .tst-lta p {\n                font-size: 10px;\n                text-transform: uppercase;\n                letter-spacing: 1px;\n                margin: 0px; }\n  ion-content .date-cont ion-item-sliding ion-item ion-label .box-crdits .tst-lta p span {\n                  display: block;\n                  font-size: 13px;\n                  font-weight: 500;\n                  letter-spacing: 2px; }\n  ion-content .date-cont ion-item-sliding ion-item-options ion-item-option {\n        padding: 0px 1px;\n        font-size: 20px;\n        outline: 0px; }\n  ion-content .cenys {\n    text-align: center;\n    padding: 20px;\n    border-radius: 30px 30px 0 0;\n    margin-top: -29px;\n    z-index: 11;\n    position: relative;\n    background: #fff; }\n  ion-content .cenys p {\n      font-size: 21px;\n      font-weight: 600;\n      margin-bottom: 12px; }\n  ion-content .cenys span {\n      display: block;\n      font-size: 14px;\n      color: #757575;\n      margin-bottom: 17px; }\n  ion-content .cenys ion-button {\n      min-height: 46px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdmlkZW92aWV3L0U6XFxmaXRuZXNzLWFwcC1jb2RlLWRlbGl2ZXJ5L3NyY1xcYXBwXFxwYWdlc1xcdmlkZW92aWV3XFx2aWRlb3ZpZXcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksb0NBQWEsRUFBQTtFQURqQjtJQUlLLGtCQUFrQixFQUFBO0VBSnZCO01BT00sYUFBWSxFQUFBO0VBUGxCO01BV0cscUJBQWE7TUFDYix1QkFBdUI7TUFDdkIsY0FBYztNQUNkLGtCQUFhLEVBQUE7RUFkaEI7UUFpQkksY0FBYTtRQUNiLGVBQWMsRUFBQTtFQWxCbEI7UUFzQkksZUFBZTtRQUNmLGVBQWU7UUFDZixlQUFlO1FBQ2YsZ0JBQWdCO1FBQ2hCLGdCQUFnQjtRQUNoQiwyQkFBb0I7UUFBcEIsb0JBQW9CO1FBQ3BCLGtCQUFrQjtRQUNsQixtQ0FBbUM7UUFDbkMsd0JBQXVCO2dCQUF2Qix1QkFBdUI7UUFDdkIseUJBQW1CO2dCQUFuQixtQkFBbUI7UUFDbkIsWUFBWTtRQUNaLGNBQWMsRUFBQTtFQWpDbEI7UUFxQ0ksZUFBZSxFQUFBO0VBckNuQjtJQTJDRSxrQkFBa0I7SUFDbEIsV0FBVTtJQUNWLG9CQUFvQjtJQUNwQixnQ0FBZ0M7SUFDaEMsaUJBQWlCO0lBQ2pCLGtDQUFrQyxFQUFBO0VBaERwQztNQW1ERyxrQ0FBa0M7TUFDbEMsV0FBVztNQUNYLFlBQVk7TUFDWixtQkFBbUI7TUFDbkIsNENBQTRDO01BQ25DLG1CQUFtQixFQUFBO0VBeEQvQjtRQTJETyxtQkFBYTtRQUNoQixvQkFBZ0I7UUFDaEIsd0JBQW9CO1FBQ3BCLGFBQWE7UUFDYixnQkFBZ0IsRUFBQTtFQS9EcEI7VUFrRUssV0FBVSxFQUFBO0VBbEVmO1lBcUVNLFdBQVcsRUFBQTtFQXJFakI7Y0F3RU8sb0JBQWE7Y0FBYixhQUFhO2NBQ2IseUJBQW1CO3NCQUFuQixtQkFBbUI7Y0FDbkIseUJBQThCO3NCQUE5Qiw4QkFBOEI7Y0FDM0IsbUJBQW1CLEVBQUE7RUEzRTdCO2dCQTZFUSxlQUFlO2dCQUNmLHlCQUF5QjtnQkFDekIsbUJBQW1CO2dCQUNuQixXQUFXLEVBQUE7RUFoRm5CO2tCQWtGUyxjQUFjO2tCQUNkLGVBQWU7a0JBQ2YsZ0JBQWdCO2tCQUNoQixtQkFBbUIsRUFBQTtFQXJGNUI7Z0JBMEZRLGVBQWUsRUFBQTtFQTFGdkI7Y0ErRk8sNkJBQTZCO2NBQzdCLG9CQUFhO2NBQWIsYUFBYTtjQUNiLHlCQUFtQjtzQkFBbkIsbUJBQW1CO2NBQ25CLHlCQUE4QjtzQkFBOUIsOEJBQThCO2NBQzlCLHVCQUF1QjtjQUN2QixtQkFBbUI7Y0FDbkIsZUFBZTtjQUNmLGdCQUFnQixFQUFBO0VBdEd2QjtjQTBHTyw2QkFBNkIsRUFBQTtFQTFHcEM7Z0JBNEdRLGVBQWU7Z0JBQ2YseUJBQXlCO2dCQUN6QixtQkFBbUI7Z0JBQ25CLFdBQVcsRUFBQTtFQS9HbkI7a0JBaUhTLGNBQWM7a0JBQ2QsZUFBZTtrQkFDZixnQkFBZ0I7a0JBQ2hCLG1CQUFtQixFQUFBO0VBcEg1QjtRQStIUSxnQkFBZ0I7UUFDbkIsZUFBZTtRQUNmLFlBQVksRUFBQTtFQWpJakI7SUF1SUUsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYiw0QkFBNEI7SUFDNUIsaUJBQWlCO0lBQ2pCLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsZ0JBQWdCLEVBQUE7RUE3SWxCO01BK0lHLGVBQWU7TUFDZixnQkFBZ0I7TUFDaEIsbUJBQW1CLEVBQUE7RUFqSnRCO01Bb0pHLGNBQWM7TUFDZCxlQUFlO01BQ2YsY0FBYztNQUNkLG1CQUFtQixFQUFBO0VBdkp0QjtNQTBKRyxnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3ZpZGVvdmlldy92aWRlb3ZpZXcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItZ3JleTMpO1xyXG5cdGlvbi1oZWFkZXJcclxuXHR7XHJcblx0ICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICAmOmFmdGVyXHJcbiAgICAgICAge1xyXG5cdFx0ICAgIGRpc3BsYXk6bm9uZTtcclxuXHRcdH1cdFx0XHJcblx0XHRpb24tdG9vbGJhclxyXG5cdFx0e1xyXG5cdFx0XHQtLWJhY2tncm91bmQ6ICNlY2VjZWM7XHJcblx0XHRcdHBhZGRpbmc6IDI1cHggMTBweCA1MHB4O1xyXG5cdFx0XHRjb2xvcjogIzI5MjkyOTtcclxuXHRcdFx0LS1taW4taGVpZ2h0OiAyOHB4O1xyXG5cdFx0XHRpb24tYmFjay1idXR0b25cclxuXHRcdFx0e1xyXG5cdFx0XHRcdGNvbG9yOiMyOTI5Mjk7XHJcblx0XHRcdFx0Zm9udC1zaXplOjIwcHg7XHJcblx0XHRcdH1cdFx0XHRcclxuXHRcdFx0aW9uLWJ1dHRvbnNcclxuXHRcdFx0e1xyXG5cdFx0XHRcdGZvbnQtc2l6ZTogMjBweDtcclxuXHRcdFx0XHRtaW4td2lkdGg6IDMwcHg7XHJcblx0XHRcdFx0bWF4LXdpZHRoOiAzMHB4O1xyXG5cdFx0XHRcdG1pbi1oZWlnaHQ6IDMwcHg7XHJcblx0XHRcdFx0bWF4LWhlaWdodDogMzBweDtcclxuXHRcdFx0XHRkaXNwbGF5OiBpbmxpbmUtZmxleDtcclxuXHRcdFx0XHRib3JkZXItcmFkaXVzOiA1MCU7XHJcblx0XHRcdFx0YmFja2dyb3VuZDogcmdiYSgyMjcsIDI3LCAzNSwgMC4wOCk7XHJcblx0XHRcdFx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcblx0XHRcdFx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRcdFx0XHRvdXRsaW5lOiAwcHg7XHJcblx0XHRcdFx0Y29sb3I6ICNlMzFiMjM7XHJcblx0XHRcdH1cclxuXHRcdFx0aW9uLXRpdGxlXHJcblx0XHRcdHtcclxuXHRcdFx0XHRmb250LXNpemU6IDE4cHg7XHJcblx0XHRcdH1cclxuXHRcdH1cclxuXHR9XHJcblx0LmRhdGUtY29udCBcclxuXHR7XHJcblx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0XHR6LWluZGV4OjExO1xyXG5cdFx0cGFkZGluZzogMzBweCAyMHB4IDA7XHJcblx0XHRib3JkZXItcmFkaXVzOiAyNXB4IDI1cHggMHB4IDBweDtcclxuXHRcdG1hcmdpbi10b3A6IC0zMHB4O1xyXG5cdFx0YmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLWdyZXkzKTtcdFxyXG5cdFx0aW9uLWl0ZW0tc2xpZGluZ1xyXG5cdFx0e1xyXG5cdFx0XHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3Itd2hpdGUpO1xyXG5cdFx0XHR3aWR0aDogMTAwJTtcclxuXHRcdFx0cGFkZGluZzogMHB4O1xyXG5cdFx0XHRib3JkZXItcmFkaXVzOiAxMnB4O1xyXG5cdFx0XHRib3gtc2hhZG93OiAxcHggNHB4IDEwcHggcmdiYSgwLCAwLCAwLCAwLjA3KTtcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDsgICAgXHRcdFx0XHJcblx0XHRcdGlvbi1pdGVtXHJcblx0XHRcdHtcclxuXHRcdFx0ICAgIC0tYmFja2dyb3VuZDogd2hpdGU7XHJcblx0XHRcdFx0LS1wYWRkaW5nLXN0YXJ0OiAwcHg7XHJcblx0XHRcdFx0LS1pbm5lci1wYWRkaW5nLWVuZDogMHB4O1xyXG5cdFx0XHRcdHBhZGRpbmc6IDE1cHg7XHJcblx0XHRcdFx0YmFja2dyb3VuZDogI2ZmZjtcdFx0XHRcclxuXHRcdFx0XHRpb24tbGFiZWxcclxuXHRcdFx0XHR7XHJcblx0XHRcdFx0XHRtYXJnaW46MHB4O1x0XHRcclxuXHRcdFx0XHRcdC5ib3gtY3JkaXRzIFxyXG5cdFx0XHRcdFx0e1xyXG5cdFx0XHRcdFx0XHR3aWR0aDogMTAwJTtcclxuXHRcdFx0XHRcdFx0LnRvcC1jaXBzIFxyXG5cdFx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcclxuXHRcdFx0XHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdFx0XHRcdFx0XHRcdGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHRcdFx0XHRcdFx0ICAgIG1hcmdpbi1ib3R0b206IDE1cHg7XHRcclxuXHRcdFx0XHRcdFx0XHRwIHtcclxuXHRcdFx0XHRcdFx0XHRcdGZvbnQtc2l6ZTogMTBweDtcclxuXHRcdFx0XHRcdFx0XHRcdHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcblx0XHRcdFx0XHRcdFx0XHRsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cdFx0XHRcdFx0XHRcdFx0bWFyZ2luOiAwcHg7XHJcblx0XHRcdFx0XHRcdFx0XHRzcGFuIHtcclxuXHRcdFx0XHRcdFx0XHRcdFx0ZGlzcGxheTogYmxvY2s7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGZvbnQtc2l6ZTogMTNweDtcclxuXHRcdFx0XHRcdFx0XHRcdFx0Zm9udC13ZWlnaHQ6IDUwMDtcclxuXHRcdFx0XHRcdFx0XHRcdFx0bGV0dGVyLXNwYWNpbmc6IDJweDtcclxuXHRcdFx0XHRcdFx0XHRcdH1cclxuXHRcdFx0XHRcdFx0XHR9XHJcblx0XHRcdFx0XHRcdFx0aW1nLnZpc2EtcyBcclxuXHRcdFx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHRcdFx0XHRtYXgtd2lkdGg6IDM4cHg7XHJcblx0XHRcdFx0XHRcdFx0fVxyXG5cdFx0XHRcdFx0XHR9XHJcblx0XHRcdFx0XHRcdC5hY2NudC1udXNtIFxyXG5cdFx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHRcdFx0Y29sb3I6IHZhcigtLWlvbi1jb2xvci1ncmV5MSk7XHJcblx0XHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcclxuXHRcdFx0XHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdFx0XHRcdFx0XHRcdGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHRcdFx0XHRcdFx0XHRtYXJnaW46IDBweCA1cHggMHB4IDBweDtcclxuXHRcdFx0XHRcdFx0XHRsZXR0ZXItc3BhY2luZzogM3B4O1xyXG5cdFx0XHRcdFx0XHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHRcdFx0XHRcdFx0XHRmb250LXdlaWdodDogNTAwO1xyXG5cdFx0XHRcdFx0XHR9XHJcblx0XHRcdFx0XHRcdC50c3QtbHRhIFxyXG5cdFx0XHRcdFx0XHR7XHJcblx0XHRcdFx0XHRcdFx0Y29sb3I6IHZhcigtLWlvbi1jb2xvci1ncmV5MSk7XHJcblx0XHRcdFx0XHRcdFx0cCB7XHJcblx0XHRcdFx0XHRcdFx0XHRmb250LXNpemU6IDEwcHg7XHJcblx0XHRcdFx0XHRcdFx0XHR0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG5cdFx0XHRcdFx0XHRcdFx0bGV0dGVyLXNwYWNpbmc6IDFweDtcclxuXHRcdFx0XHRcdFx0XHRcdG1hcmdpbjogMHB4O1xyXG5cdFx0XHRcdFx0XHRcdFx0c3BhbiB7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGRpc3BsYXk6IGJsb2NrO1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRmb250LXNpemU6IDEzcHg7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGZvbnQtd2VpZ2h0OiA1MDA7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGxldHRlci1zcGFjaW5nOiAycHg7XHJcblx0XHRcdFx0XHRcdFx0XHR9XHJcblx0XHRcdFx0XHRcdFx0fVxyXG5cdFx0XHRcdFx0XHR9XHRcdFx0XHJcblx0XHRcdFx0XHR9XHRcdFxyXG5cdFx0XHRcdH1cdFx0XHJcblx0XHRcdH1cclxuICAgICAgICAgICAgaW9uLWl0ZW0tb3B0aW9uc1xyXG4gICAgICAgICAgICB7XHJcblx0XHRcdCAgICBpb24taXRlbS1vcHRpb25cclxuXHRcdFx0XHR7XHJcblx0XHRcdFx0ICAgIHBhZGRpbmc6IDBweCAxcHg7XHJcblx0XHRcdFx0XHRmb250LXNpemU6IDIwcHg7XHJcblx0XHRcdFx0XHRvdXRsaW5lOiAwcHg7XHJcblx0XHRcdFx0fVxyXG5cdFx0XHR9XHRcdFx0XHJcblx0XHR9XHRcdFxyXG5cdH1cdFxyXG5cdC5jZW55cyB7XHJcblx0XHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0XHRwYWRkaW5nOiAyMHB4O1xyXG5cdFx0Ym9yZGVyLXJhZGl1czogMzBweCAzMHB4IDAgMDtcclxuXHRcdG1hcmdpbi10b3A6IC0yOXB4O1xyXG5cdFx0ei1pbmRleDogMTE7XHJcblx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0XHRiYWNrZ3JvdW5kOiAjZmZmO1xyXG5cdFx0cCB7XHJcblx0XHRcdGZvbnQtc2l6ZTogMjFweDtcclxuXHRcdFx0Zm9udC13ZWlnaHQ6IDYwMDtcclxuXHRcdFx0bWFyZ2luLWJvdHRvbTogMTJweDtcclxuXHRcdH1cclxuXHRcdHNwYW4ge1xyXG5cdFx0XHRkaXNwbGF5OiBibG9jaztcclxuXHRcdFx0Zm9udC1zaXplOiAxNHB4O1xyXG5cdFx0XHRjb2xvcjogIzc1NzU3NTtcclxuXHRcdFx0bWFyZ2luLWJvdHRvbTogMTdweDtcclxuXHRcdH1cclxuXHRcdGlvbi1idXR0b24ge1xyXG5cdFx0XHRtaW4taGVpZ2h0OiA0NnB4O1xyXG5cdFx0fVxyXG5cdH1cclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/pages/videoview/videoview.page.ts":
+/*!***************************************************!*\
+  !*** ./src/app/pages/videoview/videoview.page.ts ***!
+  \***************************************************/
+/*! exports provided: VideoviewPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoviewPage", function() { return VideoviewPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var ngx_embed_video__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-embed-video */ "./node_modules/ngx-embed-video/dist/index.js");
+/* harmony import */ var ngx_embed_video__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ngx_embed_video__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/data.service */ "./src/app/services/data.service.ts");
+
+
+
+
+
+let VideoviewPage = class VideoviewPage {
+    constructor(embedService, DataService, loadingController, modalController, navParams) {
+        this.embedService = embedService;
+        this.DataService = DataService;
+        this.loadingController = loadingController;
+        this.modalController = modalController;
+        this.navParams = navParams;
+        this.url = navParams.get('url');
+        this.urlview = this.embedService.embed(this.url);
+    }
+    ngOnInit() {
+    }
+    dismiss() {
+        this.modalController.dismiss({
+            'dismissed': true
+        });
+    }
+};
+VideoviewPage.ctorParameters = () => [
+    { type: ngx_embed_video__WEBPACK_IMPORTED_MODULE_2__["EmbedVideoService"] },
+    { type: _services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavParams"] }
+];
+VideoviewPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-videoview',
+        template: __webpack_require__(/*! raw-loader!./videoview.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/videoview/videoview.page.html"),
+        styles: [__webpack_require__(/*! ./videoview.page.scss */ "./src/app/pages/videoview/videoview.page.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [ngx_embed_video__WEBPACK_IMPORTED_MODULE_2__["EmbedVideoService"], _services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavParams"]])
+], VideoviewPage);
 
 
 
@@ -1361,6 +1647,145 @@ AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_6__["Facebook"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"]])
 ], AuthService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/data.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/data.service.ts ***!
+  \******************************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/config */ "./src/app/config/config.ts");
+
+
+
+
+const Url = _config_config__WEBPACK_IMPORTED_MODULE_3__["config"].Url;
+let DataService = class DataService {
+    constructor(http) {
+        this.http = http;
+        this.page = 0;
+    }
+    ejectQuery(query) {
+        query = Url + query;
+        return this.http.get(query);
+    }
+    getDataPackages() {
+        return this.ejectQuery('/json/data_sub_plans.php?status=1');
+    }
+    getDataStrings() {
+        return this.ejectQuery('/json/data_strings.php');
+    }
+    getDataMotivation() {
+        return this.ejectQuery('/json/data_quotes.php');
+    }
+    getDataFeaturedDiets() {
+        return this.ejectQuery('/json/data_diets.php?featured=1');
+    }
+    getCount() {
+        return this.ejectQuery('/json/data_counts.php');
+    }
+    getDataCategories() {
+        return this.ejectQuery('/json/data_categories.php');
+    }
+    getDataGoals() {
+        return this.ejectQuery('/json/data_goals.php');
+    }
+    getDataLevels() {
+        return this.ejectQuery('/json/data_levels.php');
+    }
+    getDataTags() {
+        return this.ejectQuery('/json/data_tags.php');
+    }
+    getDataEquipments() {
+        return this.ejectQuery('/json/data_equipments.php');
+    }
+    getDataBodyparts() {
+        return this.ejectQuery('/json/data_bodyparts.php');
+    }
+    getDataFeaturedPosts() {
+        return this.ejectQuery('/json/data_posts.php?featured=1');
+    }
+    deletecard(id) {
+        return this.ejectQuery(`/json/deletecard.php?id=${id}`);
+    }
+    postcarddetails(card, email) {
+        return this.ejectQuery(`/json/addcard.php?card=${card}&email=${email}`);
+    }
+    getusersubscriptions(email) {
+        return this.ejectQuery(`/json/getusersubscriptions.php?email=${email}`);
+    }
+    getUsercards(email) {
+        return this.ejectQuery(`/json/getusercards.php?email=${email}`);
+    }
+    getDataRecentPosts(limit) {
+        return this.ejectQuery(`/json/data_posts.php?limit=${limit}`);
+    }
+    getDataWorkoutsByGoal(id) {
+        return this.ejectQuery(`/json/data_workouts.php?goal=${id}`);
+    }
+    getDataWorkoutsByLevel(id) {
+        return this.ejectQuery(`/json/data_workouts.php?level=${id}`);
+    }
+    getDataExercisesByBodypart(id) {
+        return this.ejectQuery(`/json/data_bodypart.php?id=${id}`);
+    }
+    getcarddetails(id) {
+        return this.ejectQuery(`/json/get_card_details.php?id=${id}`);
+    }
+    getDataExercisesByEquipment(id) {
+        return this.ejectQuery(`/json/data_equipment.php?id=${id}`);
+    }
+    getDataDietsByCategory(id) {
+        return this.ejectQuery(`/json/data_diets.php?category=${id}`);
+    }
+    getDataPostsByTag(id) {
+        return this.ejectQuery(`/json/data_posts.php?tag=${id}`);
+    }
+    getuserdetails(email) {
+        return this.ejectQuery(`/json/getusersubscription.php?email=${email}`);
+    }
+    getDataExerciseById(id) {
+        return this.ejectQuery(`/json/data_exercises.php?id=${id}&limit=1`);
+    }
+    getDataWorkoutById(id) {
+        return this.ejectQuery(`/json/data_workouts.php?id=${id}&limit=1`);
+    }
+    getDataDietById(id) {
+        return this.ejectQuery(`/json/data_diets.php?id=${id}&limit=1`);
+    }
+    getDataPostById(id) {
+        return this.ejectQuery(`/json/data_posts.php?id=${id}&limit=1`);
+    }
+    getDataWorkoutExercisesByDay(id, day) {
+        return this.ejectQuery(`/json/data_days.php?id=${id}&day=${day}`);
+    }
+    editcarddetails(card, id) {
+        return this.ejectQuery(`/json/edit_card.php?card=${card}&id=${id}`);
+    }
+    poststripedetails(card, token, id, email, name) {
+        return this.ejectQuery(`/json/user_add_plan.php?card=${card}&token=${token}&id=${id}&email=${email}&name=${name}`);
+    }
+};
+DataService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+DataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], DataService);
 
 
 

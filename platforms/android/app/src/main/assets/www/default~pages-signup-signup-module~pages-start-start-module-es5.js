@@ -11089,6 +11089,48 @@ var SignupPage = /** @class */ (function () {
             ])),
         });
     };
+    SignupPage.prototype.presentLoading = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.loadingController.create({
+                                mode: "ios"
+                            })];
+                    case 1:
+                        _a.loading = _b.sent();
+                        return [4 /*yield*/, this.loading.present()];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SignupPage.prototype.stopLoading = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var self;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(this.loading != undefined)) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.loading.dismiss()];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        self = this;
+                        setTimeout(function () {
+                            self.stopLoading();
+                        }, 1000);
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
     SignupPage.prototype.tryRegister = function (value) {
         var _this = this;
         var controls = this.validationsform.controls;
@@ -11103,19 +11145,24 @@ var SignupPage = /** @class */ (function () {
         jquery__WEBPACK_IMPORTED_MODULE_10___default()('.cont-scti-all').show();
         //$('.cont-scti-in').hide();
         this.isDisabled = true;
+        this.presentLoading();
         this.authService.doRegister(value)
             .then(function (res) {
+            _this.stopLoading();
             firebase_app__WEBPACK_IMPORTED_MODULE_7__["auth"]().currentUser.updateProfile({
                 displayName: value.name,
             });
             _this.modalCtrl.dismiss();
             _this.router.navigate(['/plans']);
         }, function (err) {
+            _this.stopLoading();
             _this.isDisabled = false;
             if (err.code === 'auth/email-already-in-use') {
+                _this.stopLoading();
                 _this.presentAlert(_config_strings__WEBPACK_IMPORTED_MODULE_6__["strings"].ST36);
             }
             else {
+                _this.stopLoading();
                 _this.presentAlert(_config_strings__WEBPACK_IMPORTED_MODULE_6__["strings"].ST32);
             }
         });
@@ -11366,125 +11413,6 @@ var TermsguestPage = /** @class */ (function () {
             _services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]])
     ], TermsguestPage);
     return TermsguestPage;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/data.service.ts":
-/*!******************************************!*\
-  !*** ./src/app/services/data.service.ts ***!
-  \******************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/config */ "./src/app/config/config.ts");
-
-
-
-
-var Url = _config_config__WEBPACK_IMPORTED_MODULE_3__["config"].Url;
-var DataService = /** @class */ (function () {
-    function DataService(http) {
-        this.http = http;
-        this.page = 0;
-    }
-    DataService.prototype.ejectQuery = function (query) {
-        query = Url + query;
-        return this.http.get(query);
-    };
-    DataService.prototype.getDataPackages = function () {
-        return this.ejectQuery('/json/data_sub_plans.php?status=1');
-    };
-    DataService.prototype.getDataStrings = function () {
-        return this.ejectQuery('/json/data_strings.php');
-    };
-    DataService.prototype.getDataMotivation = function () {
-        return this.ejectQuery('/json/data_quotes.php');
-    };
-    DataService.prototype.getDataFeaturedDiets = function () {
-        return this.ejectQuery('/json/data_diets.php?featured=1');
-    };
-    DataService.prototype.getCount = function () {
-        return this.ejectQuery('/json/data_counts.php');
-    };
-    DataService.prototype.getDataCategories = function () {
-        return this.ejectQuery('/json/data_categories.php');
-    };
-    DataService.prototype.getDataGoals = function () {
-        return this.ejectQuery('/json/data_goals.php');
-    };
-    DataService.prototype.getDataLevels = function () {
-        return this.ejectQuery('/json/data_levels.php');
-    };
-    DataService.prototype.getDataTags = function () {
-        return this.ejectQuery('/json/data_tags.php');
-    };
-    DataService.prototype.getDataEquipments = function () {
-        return this.ejectQuery('/json/data_equipments.php');
-    };
-    DataService.prototype.getDataBodyparts = function () {
-        return this.ejectQuery('/json/data_bodyparts.php');
-    };
-    DataService.prototype.getDataFeaturedPosts = function () {
-        return this.ejectQuery('/json/data_posts.php?featured=1');
-    };
-    DataService.prototype.getDataRecentPosts = function (limit) {
-        return this.ejectQuery("/json/data_posts.php?limit=" + limit);
-    };
-    DataService.prototype.getDataWorkoutsByGoal = function (id) {
-        return this.ejectQuery("/json/data_workouts.php?goal=" + id);
-    };
-    DataService.prototype.getDataWorkoutsByLevel = function (id) {
-        return this.ejectQuery("/json/data_workouts.php?level=" + id);
-    };
-    DataService.prototype.getDataExercisesByBodypart = function (id) {
-        return this.ejectQuery("/json/data_bodypart.php?id=" + id);
-    };
-    DataService.prototype.getDataExercisesByEquipment = function (id) {
-        return this.ejectQuery("/json/data_equipment.php?id=" + id);
-    };
-    DataService.prototype.getDataDietsByCategory = function (id) {
-        return this.ejectQuery("/json/data_diets.php?category=" + id);
-    };
-    DataService.prototype.getDataPostsByTag = function (id) {
-        return this.ejectQuery("/json/data_posts.php?tag=" + id);
-    };
-    DataService.prototype.getDataExerciseById = function (id) {
-        return this.ejectQuery("/json/data_exercises.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataWorkoutById = function (id) {
-        return this.ejectQuery("/json/data_workouts.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataDietById = function (id) {
-        return this.ejectQuery("/json/data_diets.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataPostById = function (id) {
-        return this.ejectQuery("/json/data_posts.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataWorkoutExercisesByDay = function (id, day) {
-        return this.ejectQuery("/json/data_days.php?id=" + id + "&day=" + day);
-    };
-    DataService.prototype.poststripedetails = function (token, id, email) {
-        return this.ejectQuery("/json/user_add_plan.php?token=" + token + "&id=" + id + "&email=" + email);
-    };
-    DataService.ctorParameters = function () { return [
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-    ]; };
-    DataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
-    ], DataService);
-    return DataService;
 }());
 
 

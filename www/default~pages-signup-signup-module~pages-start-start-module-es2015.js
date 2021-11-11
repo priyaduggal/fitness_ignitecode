@@ -11079,6 +11079,27 @@ let SignupPage = class SignupPage {
             ])),
         });
     }
+    presentLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.loading = yield this.loadingController.create({
+                mode: "ios"
+            });
+            yield this.loading.present();
+        });
+    }
+    stopLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if (this.loading != undefined) {
+                yield this.loading.dismiss();
+            }
+            else {
+                var self = this;
+                setTimeout(function () {
+                    self.stopLoading();
+                }, 1000);
+            }
+        });
+    }
     tryRegister(value) {
         const controls = this.validationsform.controls;
         console.log(controls);
@@ -11090,19 +11111,24 @@ let SignupPage = class SignupPage {
         jquery__WEBPACK_IMPORTED_MODULE_10___default()('.cont-scti-all').show();
         //$('.cont-scti-in').hide();
         this.isDisabled = true;
+        this.presentLoading();
         this.authService.doRegister(value)
             .then(res => {
+            this.stopLoading();
             firebase_app__WEBPACK_IMPORTED_MODULE_7__["auth"]().currentUser.updateProfile({
                 displayName: value.name,
             });
             this.modalCtrl.dismiss();
             this.router.navigate(['/plans']);
         }, err => {
+            this.stopLoading();
             this.isDisabled = false;
             if (err.code === 'auth/email-already-in-use') {
+                this.stopLoading();
                 this.presentAlert(_config_strings__WEBPACK_IMPORTED_MODULE_6__["strings"].ST36);
             }
             else {
+                this.stopLoading();
                 this.presentAlert(_config_strings__WEBPACK_IMPORTED_MODULE_6__["strings"].ST32);
             }
         });
@@ -11322,124 +11348,6 @@ TermsguestPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
         _services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]])
 ], TermsguestPage);
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/data.service.ts":
-/*!******************************************!*\
-  !*** ./src/app/services/data.service.ts ***!
-  \******************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/config */ "./src/app/config/config.ts");
-
-
-
-
-const Url = _config_config__WEBPACK_IMPORTED_MODULE_3__["config"].Url;
-let DataService = class DataService {
-    constructor(http) {
-        this.http = http;
-        this.page = 0;
-    }
-    ejectQuery(query) {
-        query = Url + query;
-        return this.http.get(query);
-    }
-    getDataPackages() {
-        return this.ejectQuery('/json/data_sub_plans.php?status=1');
-    }
-    getDataStrings() {
-        return this.ejectQuery('/json/data_strings.php');
-    }
-    getDataMotivation() {
-        return this.ejectQuery('/json/data_quotes.php');
-    }
-    getDataFeaturedDiets() {
-        return this.ejectQuery('/json/data_diets.php?featured=1');
-    }
-    getCount() {
-        return this.ejectQuery('/json/data_counts.php');
-    }
-    getDataCategories() {
-        return this.ejectQuery('/json/data_categories.php');
-    }
-    getDataGoals() {
-        return this.ejectQuery('/json/data_goals.php');
-    }
-    getDataLevels() {
-        return this.ejectQuery('/json/data_levels.php');
-    }
-    getDataTags() {
-        return this.ejectQuery('/json/data_tags.php');
-    }
-    getDataEquipments() {
-        return this.ejectQuery('/json/data_equipments.php');
-    }
-    getDataBodyparts() {
-        return this.ejectQuery('/json/data_bodyparts.php');
-    }
-    getDataFeaturedPosts() {
-        return this.ejectQuery('/json/data_posts.php?featured=1');
-    }
-    getDataRecentPosts(limit) {
-        return this.ejectQuery(`/json/data_posts.php?limit=${limit}`);
-    }
-    getDataWorkoutsByGoal(id) {
-        return this.ejectQuery(`/json/data_workouts.php?goal=${id}`);
-    }
-    getDataWorkoutsByLevel(id) {
-        return this.ejectQuery(`/json/data_workouts.php?level=${id}`);
-    }
-    getDataExercisesByBodypart(id) {
-        return this.ejectQuery(`/json/data_bodypart.php?id=${id}`);
-    }
-    getDataExercisesByEquipment(id) {
-        return this.ejectQuery(`/json/data_equipment.php?id=${id}`);
-    }
-    getDataDietsByCategory(id) {
-        return this.ejectQuery(`/json/data_diets.php?category=${id}`);
-    }
-    getDataPostsByTag(id) {
-        return this.ejectQuery(`/json/data_posts.php?tag=${id}`);
-    }
-    getDataExerciseById(id) {
-        return this.ejectQuery(`/json/data_exercises.php?id=${id}&limit=1`);
-    }
-    getDataWorkoutById(id) {
-        return this.ejectQuery(`/json/data_workouts.php?id=${id}&limit=1`);
-    }
-    getDataDietById(id) {
-        return this.ejectQuery(`/json/data_diets.php?id=${id}&limit=1`);
-    }
-    getDataPostById(id) {
-        return this.ejectQuery(`/json/data_posts.php?id=${id}&limit=1`);
-    }
-    getDataWorkoutExercisesByDay(id, day) {
-        return this.ejectQuery(`/json/data_days.php?id=${id}&day=${day}`);
-    }
-    poststripedetails(token, id, email) {
-        return this.ejectQuery(`/json/user_add_plan.php?token=${token}&id=${id}&email=${email}`);
-    }
-};
-DataService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-DataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
-], DataService);
 
 
 

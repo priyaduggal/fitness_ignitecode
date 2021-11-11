@@ -16,8 +16,12 @@ cardForm: FormGroup;
 email:any
 reg_exp:any;
 planid:any;
- isLoading = false;
+cards=[];
+isLoading = false;
+ loading:any;
+ name:any;
   constructor(  private router: Router,
+    private loadingController: LoadingController,
   public activatedRoute: ActivatedRoute,
   public alertController: AlertController,
   private firebase: FirebaseService,
@@ -29,14 +33,18 @@ planid:any;
 async presentToast(message,color) {
       const toast = await this.toastController.create({
         message: message,
-        duration: 3000,
+        duration: 5000,
         position: 'bottom',
         color: color,
-        // showCloseButton: true
+         showCloseButton: true
       });
       toast.present();
     }
   ngOnInit() {
+  }
+  addcard()
+  {
+	  
   }
   get form() {
 		return this.cardForm.controls;
@@ -64,38 +72,42 @@ async presentToast(message,color) {
 	validateCard: any = false;
 	validateExpMonthYear: any = false;
 
-	saveCard(value: any): void {
-
-       
+	saveCard1(value: any): void {
+  
+     /*   
 		this.submitted = true;
 		if (this.cardForm.invalid) {
 			return;
-		}
-
+		} */
+		  //this.add(value);
+		
+	   /*  this.presentLoading();
 		this.stripe.setPublishableKey("pk_test_51JFahIKnThrLCQpf68Dm6ZM9GYQUpvoMtorFgC6TATWNjBI7dHY1cZcBo7VYVTl56HoecV2gsGWNsnRjY8fIwKUm00Exx9MY4W");
 		this.stripe.validateCardNumber(value.number).then((res) => {
 		console.log(res);
 		if(res=='OK')
 
 		{
-
+		
 		this.stripe.validateExpiryDate(value.expMonth,value.expYear).then((res) => {
 	    this.add(value);
 		}).catch((error) => {
-        
+       this.stopLoading();
 		this.presentToast(error, 'danger');
 		console.error(error);
 		return false;
 		});
 
+		}else{
+			 this.stopLoading();
 		}
 		}).catch((error) => {
-	
+	  this.stopLoading();
 		this.presentToast(error, 'danger');
-			console.error(error);
+		console.error(error);
 		return false;
 		
-		});
+		}); */
 
 }
   createCardForm() {
@@ -106,46 +118,98 @@ async presentToast(message,color) {
 			{
 				cardName: [ "", [ Validators.required ] ],
 				number: [ "", [ Validators.required, Validators.pattern(this.reg_exp) ] ],
-				expMonth: [ "", [ Validators.required ] ],
-				expYear: [ "", [ Validators.required ] ],
-			    cvv: [ "", [ Validators.required ] ]
+				expMonth: [ "", [ Validators.required , Validators.pattern(this.reg_exp)] ],
+				expYear: [ "", [ Validators.required, Validators.pattern(this.reg_exp) ] ],
+			    cvv: [ "", [ Validators.required, Validators.pattern(this.reg_exp) ] ]
 			},
 			{}
 		);
 	}
 	async ionViewDidEnter() {
 		 this.planid = this.activatedRoute.snapshot.paramMap.get('id');
-		 
-       this.email = await this.firebase.getEmail();
+		 this.email = await this.firebase.getEmail();
+		 this.name = await this.firebase.getDisplayName();
 	   
 	}
-add(value){
-	  this.isLoading = true;
+saveCard(value: any): void {
+  this.stripe.setPublishableKey("pk_test_51JFahIKnThrLCQpf68Dm6ZM9GYQUpvoMtorFgC6TATWNjBI7dHY1cZcBo7VYVTl56HoecV2gsGWNsnRjY8fIwKUm00Exx9MY4W");
+		
+     this.presentToast('Please Wait', 'success');  
+		this.submitted = true;
+		if (this.cardForm.invalid) {
+			return;
+		}
+		 
      let card = {
       number: value.number,
       expMonth: value.expMonth,
       expYear: value.expYear,
-      cvc: value.cvv
+      cvc: value.cvv,
      }
 	 
-     this.stripe.createCardToken(card)
-        .then(token => this.save(token.id))
-        .catch(error => console.error(error));  
+	 
+	  let fullcard = {
+      number: value.number,
+      expMonth: value.expMonth,
+      expYear: value.expYear,
+      cvc: value.cvv,
+	  name:value.cardName,
+     }
+	 
+	
+    /*  this.stripe.createCardToken(card)
+	.then((token) => {
+		this.save(token.id,JSON.stringify(fullcard)
+	}),
+	.catch((error) => {
+		this.stopLoading();
+		this.presentToast(error, 'error');
+	}) */
+	this.stripe.createCardToken(card)
+	.then(token => 
+	
+		this.save(token.id,JSON.stringify(fullcard))
+		)
+        .catch(error => 
+		this.presentToast(error, 'danger')
+		
+		);  
+		
+	
+	
 		
 }
-save(token){	
-	this.isLoading = true;
-		this.DataService.poststripedetails( token,this.planid,this.email)
+ async presentLoading() {
+    this.loading = await this.loadingController.create({
+          mode:"ios"
+    });
+      await this.loading.present();
+  }
+   async stopLoading() {
+    if(this.loading != undefined){
+      await this.loading.dismiss();
+    }
+    else{
+      var self = this;
+      setTimeout(function(){
+        self.stopLoading();
+      },1000);
+    }
+  }
+save(token,fullcard){	
+		this.presentLoading();
+		this.DataService.poststripedetails( fullcard,token,this.planid,this.email,this.name)
 		.subscribe( resp => {
-		//this.recentposts = resp;
-		console.log(resp);
-		
-		this.isLoading = false;
-		//this.presentToast('Free trail activated successfully', 'success');
-	  localStorage.setItem('user_paid','true');
-		 this.router.navigate(['/home']);
-		 this.presentAlert();
-		});
+				this.stopLoading();
+				//this.recentposts = resp;
+				console.log(resp);
+
+				this.isLoading = false;
+				//this.presentToast('Free trail activated successfully', 'success');
+				localStorage.setItem('user_paid','true');
+				this.router.navigate(['/home']);
+				this.presentAlert();
+				});
 
 
 		}

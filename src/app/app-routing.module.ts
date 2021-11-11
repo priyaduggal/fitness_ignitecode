@@ -171,6 +171,31 @@ const routes: Routes = [
   {
     path: 'pay-stripe/:id',
     loadChildren: () => import('./pages/pay-stripe/pay-stripe.module').then( m => m.PayStripePageModule)
+  },
+ 
+  {
+    path: 'mycards',
+    loadChildren: () => import('./pages/mycards/mycards.module').then( m => m.MycardsPageModule)
+  },
+  {
+    path: 'addcard',
+    loadChildren: () => import('./pages/addcard/addcard.module').then( m => m.AddcardPageModule)
+  },
+  {
+    path: 'editcard/:id',
+    loadChildren: () => import('./pages/editcard/editcard.module').then( m => m.EditcardPageModule)
+  },
+  {
+    path: 'confirmdelete',
+    loadChildren: () => import('./pages/confirmdelete/confirmdelete.module').then( m => m.ConfirmdeletePageModule)
+  },
+  {
+    path: 'subscriptions',
+    loadChildren: () => import('./pages/subscriptions/subscriptions.module').then( m => m.SubscriptionsPageModule)
+  },
+  {
+    path: 'videoview',
+    loadChildren: () => import('./pages/videoview/videoview.module').then( m => m.VideoviewPageModule)
   }
 ];
 

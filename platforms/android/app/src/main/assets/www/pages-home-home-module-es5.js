@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header class=\"darkheader\">\n  <ion-toolbar lines=\"none\">\n      <ion-buttons slot=\"start\">\n          <ion-button (click)=\"openMenu()\">\n              <ion-icon name=\"md-menu\"></ion-icon>\n          </ion-button>\n      </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"bg-vhang\">\n\t<div class=\"content-str\">\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/workouts']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/Workouts_Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST1}} </h3>\n\t\t\t\t<p> {{data?.workouts}} Items </p> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/exercises']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/Exercises_Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST2}} </h3>\n\t\t\t\t<p> {{data?.excercises}} Items </p> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/diets']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/Diets_Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST3}} </h3>\n\t\t\t\t<p> {{data?.diets}} Items </p> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/posts']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/News_Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST4}} </h3>\n\t\t\t\t<p> {{data?.news}} Items </p> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/calculator']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/BMR_Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST105}} </h3>\n\t\t\t\t<p> </p> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n    <!--ion-grid class=\"ion-no-padding\">\n      <ion-row class=\"ion-justify-content-center ion-align-items-center row-header-bg hrtrs\">\n        <ion-col size=\"12\" class=\"ion-text-center\">\n          <img src=\"./assets/images/logo.png\" class=\"col-header-logo class-trr\">\n        </ion-col>\n      </ion-row>\n  \n      <ion-row class=\"menu-cols align-items-stretch\">\n          <ion-col size=\"12\" [routerLink]=\"['/workouts']\">\n\t\t\t<div class=\"box-firsts\">\t\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/workouts.png\"> </span>\n\t\t\t\t<ion-label>{{strings.ST1}}</ion-label>\n\t\t\t</div>\n          </ion-col>\n\n          <ion-col size=\"6\" [routerLink]=\"['/exercises']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\"> <img src=\"./assets/images/exercises.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST2}}</ion-label>\n\t\t\t\t</div>\n          </ion-col>\n\n          <ion-col size=\"6\" [routerLink]=\"['/diets']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\"> <img src=\"./assets/images/diets.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST3}}</ion-label>\n\t\t\t\t</div>\n\t\t  </ion-col>\n            \n          <ion-col size=\"6\" [routerLink]=\"['/posts']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\">  <img src=\"./assets/images/blog.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST4}}</ion-label>\n\t\t\t\t</div>\n\t\t </ion-col>\n\n          <ion-col size=\"6\" [routerLink]=\"['/calculator']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\">  <img src=\"./assets/images/calculator.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST105}}</ion-label>\n\t\t\t\t</div>\n\t\t </ion-col>\n            \n          <ion-col size=\"6\" [routerLink]=\"['/motivation']\">\n              <img src=\"./assets/images/quotes.png\">\n              <ion-label>{{strings.ST5}}</ion-label>\n          </ion-col>\n\n      </ion-row>\n  \n    </ion-grid-->\n  \n  </ion-content>\n  "
+module.exports = "<ion-header class=\"darkheader\">\n  <ion-toolbar lines=\"none\">\n      <ion-buttons slot=\"start\">\n          <ion-button (click)=\"openMenu()\">\n              <ion-icon name=\"md-menu\"></ion-icon>\n          </ion-button>\n      </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"bg-vhang\">\n\t<div class=\"content-str\">\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/workouts']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/Guides Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST10}} </h3>\n\t\t\t\t<!--p> {{data?.workouts}} Items </p--> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/exercises']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/Exercises Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST2}} </h3>\n\t\t\t\t<!--p> {{data?.excercises}} Items </p--> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/diets']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/Recipes Cover (1).png\"> </span>\n\t\t\t\t<h3> {{strings.ST3}} </h3>\n\t\t\t\t<!--p> {{data?.diets}} Items </p--> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/posts']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/Mindfulness Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST4}} </h3>\n\t\t\t\t<!--p> {{data?.news}} Items </p--> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"box-aslly-s\">\n\t\t\t<div class=\"box-conts\" [routerLink]=\"['/calculator']\">\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/BMR Cover.png\"> </span>\n\t\t\t\t<h3> {{strings.ST105}} </h3>\n\t\t\t\t<!--p> </p--> \n\t\t\t\t<span class=\"right-ics\"> <ion-icon name=\"md-arrow-dropright\"></ion-icon> </span>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n    <!--ion-grid class=\"ion-no-padding\">\n      <ion-row class=\"ion-justify-content-center ion-align-items-center row-header-bg hrtrs\">\n        <ion-col size=\"12\" class=\"ion-text-center\">\n          <img src=\"./assets/images/logo.png\" class=\"col-header-logo class-trr\">\n        </ion-col>\n      </ion-row>\n  \n      <ion-row class=\"menu-cols align-items-stretch\">\n          <ion-col size=\"12\" [routerLink]=\"['/workouts']\">\n\t\t\t<div class=\"box-firsts\">\t\n\t\t\t\t<span class=\"icoh-st\"> <img src=\"./assets/images/workouts.png\"> </span>\n\t\t\t\t<ion-label>{{strings.ST1}}</ion-label>\n\t\t\t</div>\n          </ion-col>\n\n          <ion-col size=\"6\" [routerLink]=\"['/exercises']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\"> <img src=\"./assets/images/exercises.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST2}}</ion-label>\n\t\t\t\t</div>\n          </ion-col>\n\n          <ion-col size=\"6\" [routerLink]=\"['/diets']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\"> <img src=\"./assets/images/diets.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST3}}</ion-label>\n\t\t\t\t</div>\n\t\t  </ion-col>\n            \n          <ion-col size=\"6\" [routerLink]=\"['/posts']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\">  <img src=\"./assets/images/blog.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST4}}</ion-label>\n\t\t\t\t</div>\n\t\t </ion-col>\n\n          <ion-col size=\"6\" [routerLink]=\"['/calculator']\">\n\t\t\t\t<div class=\"box-seccons-str\">\t\n\t\t\t\t\t<span class=\"icoh-dd\">  <img src=\"./assets/images/calculator.png\"> </span>\n\t\t\t\t\t<ion-label>{{strings.ST105}}</ion-label>\n\t\t\t\t</div>\n\t\t </ion-col>\n            \n          <ion-col size=\"6\" [routerLink]=\"['/motivation']\">\n              <img src=\"./assets/images/quotes.png\">\n              <ion-label>{{strings.ST5}}</ion-label>\n          </ion-col>\n\n      </ion-row>\n  \n    </ion-grid-->\n  \n  </ion-content>\n  "
 
 /***/ }),
 
@@ -164,125 +164,6 @@ var HomePage = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"], _services_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]])
     ], HomePage);
     return HomePage;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/data.service.ts":
-/*!******************************************!*\
-  !*** ./src/app/services/data.service.ts ***!
-  \******************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/config */ "./src/app/config/config.ts");
-
-
-
-
-var Url = _config_config__WEBPACK_IMPORTED_MODULE_3__["config"].Url;
-var DataService = /** @class */ (function () {
-    function DataService(http) {
-        this.http = http;
-        this.page = 0;
-    }
-    DataService.prototype.ejectQuery = function (query) {
-        query = Url + query;
-        return this.http.get(query);
-    };
-    DataService.prototype.getDataPackages = function () {
-        return this.ejectQuery('/json/data_sub_plans.php?status=1');
-    };
-    DataService.prototype.getDataStrings = function () {
-        return this.ejectQuery('/json/data_strings.php');
-    };
-    DataService.prototype.getDataMotivation = function () {
-        return this.ejectQuery('/json/data_quotes.php');
-    };
-    DataService.prototype.getDataFeaturedDiets = function () {
-        return this.ejectQuery('/json/data_diets.php?featured=1');
-    };
-    DataService.prototype.getCount = function () {
-        return this.ejectQuery('/json/data_counts.php');
-    };
-    DataService.prototype.getDataCategories = function () {
-        return this.ejectQuery('/json/data_categories.php');
-    };
-    DataService.prototype.getDataGoals = function () {
-        return this.ejectQuery('/json/data_goals.php');
-    };
-    DataService.prototype.getDataLevels = function () {
-        return this.ejectQuery('/json/data_levels.php');
-    };
-    DataService.prototype.getDataTags = function () {
-        return this.ejectQuery('/json/data_tags.php');
-    };
-    DataService.prototype.getDataEquipments = function () {
-        return this.ejectQuery('/json/data_equipments.php');
-    };
-    DataService.prototype.getDataBodyparts = function () {
-        return this.ejectQuery('/json/data_bodyparts.php');
-    };
-    DataService.prototype.getDataFeaturedPosts = function () {
-        return this.ejectQuery('/json/data_posts.php?featured=1');
-    };
-    DataService.prototype.getDataRecentPosts = function (limit) {
-        return this.ejectQuery("/json/data_posts.php?limit=" + limit);
-    };
-    DataService.prototype.getDataWorkoutsByGoal = function (id) {
-        return this.ejectQuery("/json/data_workouts.php?goal=" + id);
-    };
-    DataService.prototype.getDataWorkoutsByLevel = function (id) {
-        return this.ejectQuery("/json/data_workouts.php?level=" + id);
-    };
-    DataService.prototype.getDataExercisesByBodypart = function (id) {
-        return this.ejectQuery("/json/data_bodypart.php?id=" + id);
-    };
-    DataService.prototype.getDataExercisesByEquipment = function (id) {
-        return this.ejectQuery("/json/data_equipment.php?id=" + id);
-    };
-    DataService.prototype.getDataDietsByCategory = function (id) {
-        return this.ejectQuery("/json/data_diets.php?category=" + id);
-    };
-    DataService.prototype.getDataPostsByTag = function (id) {
-        return this.ejectQuery("/json/data_posts.php?tag=" + id);
-    };
-    DataService.prototype.getDataExerciseById = function (id) {
-        return this.ejectQuery("/json/data_exercises.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataWorkoutById = function (id) {
-        return this.ejectQuery("/json/data_workouts.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataDietById = function (id) {
-        return this.ejectQuery("/json/data_diets.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataPostById = function (id) {
-        return this.ejectQuery("/json/data_posts.php?id=" + id + "&limit=1");
-    };
-    DataService.prototype.getDataWorkoutExercisesByDay = function (id, day) {
-        return this.ejectQuery("/json/data_days.php?id=" + id + "&day=" + day);
-    };
-    DataService.prototype.poststripedetails = function (token, id, email) {
-        return this.ejectQuery("/json/user_add_plan.php?token=" + token + "&id=" + id + "&email=" + email);
-    };
-    DataService.ctorParameters = function () { return [
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-    ]; };
-    DataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
-    ], DataService);
-    return DataService;
 }());
 
 

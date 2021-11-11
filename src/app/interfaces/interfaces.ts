@@ -15,6 +15,8 @@ export interface PlansObject {
   token: string;
   id: number;
   email: string;
+  card:string;
+  name:string;
 }
 
 

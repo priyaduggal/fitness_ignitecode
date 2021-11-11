@@ -130,6 +130,7 @@ let AboutusPage = class AboutusPage {
     constructor(iab, http) {
         this.iab = iab;
         this.http = http;
+        this.cards = [];
         this.strings = _config_strings__WEBPACK_IMPORTED_MODULE_2__["strings"];
         this.config = _config_config__WEBPACK_IMPORTED_MODULE_3__["config"];
         // Http Options

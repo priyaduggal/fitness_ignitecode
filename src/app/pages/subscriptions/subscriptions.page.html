@@ -1,0 +1,91 @@
+<ion-header class="lightheader" no-border>
+  <ion-toolbar mode="ios">
+      <ion-title class="ion-text-capitalize">
+        User subscription
+      </ion-title>
+      <ion-buttons slot="start">
+        <app-backbutton color="dark"></app-backbutton>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fixed>
+
+<p *ngIf="subscriptions?.length==0"></p>
+
+<ion-item-sliding class="slide-posu" *ngFor="let c of subscriptions">
+<ion-item lines="none" >
+<div class="box-crdits" *ngIf="c?.cur=='Currently'">
+<div class="con-sst">
+<p class="rate-str"> <span> <ion-icon name="star"></ion-icon> </span> {{c.name}} activated</p>
+												
+						<div class="tst-lta">
+						<p> Start Date :- 
+								<span >{{c?.package_start | date : 'dd MMM yyyy'}}  </span> 
+								
+							</p>
+							<p> Last Date :- 
+								<span >{{c?.package_end | date : 'dd MMM yyyy'}}  </span> 
+								
+							</p>
+							<p> Price :-
+								<span > ${{c.price}}  </span> 
+							
+							</p>
+							
+						</div>	</div>	
+						</div>
+
+
+<div class="box-crdits" *ngIf="c?.cur=='Free'">
+	<div class="con-sst">
+		<p class="rate-str"> <span> <ion-icon name="star"></ion-icon> </span>7-day Free trail activated</p>
+		<div class="tst-lta">
+			<p> 
+				<span style="margin-bottom: 17px;
+    width: 100%;"> {{c.name}} Selected</span> 
+			
+			</p>
+			<p> Start Date :-
+				<span > {{c.package_start| date : 'dd MMM yyyy'}}  </span> 
+			
+			</p>
+			<p> Last Date :-
+				<span > {{c?.package_end | date : 'dd MMM yyyy'}}  </span> 
+			
+			</p>
+			<p> Amount :-
+				<span > ${{c.price}}  </span> 
+			
+			</p>
+			
+		</div>	
+	</div>
+</div>
+					
+					
+</ion-item>
+<!--ion-item lines="none">
+
+	<div class="box-crdits" *ngIf="c?.cur=='Free'">
+		<div class="con-sst">
+			<p class="rate-str"> <span> <ion-icon name="star"></ion-icon> </span> Next Plan</p>
+			
+			<div class="tst-lta">
+				<p> Package Name :-
+					<span > {{c.name}} </span> 
+				
+				</p>
+				<p> Amount :-
+					<span > ${{c.price}}  </span> 
+				
+				</p>
+				<p> Start Date :- 
+					<span >{{c?.package_end | date : 'dd MMM yyyy'}}  </span> 
+				</p>
+			</div>	
+		</div>	
+	</div>
+</ion-item-->	
+		
+		</ion-item-sliding>
+</ion-content>

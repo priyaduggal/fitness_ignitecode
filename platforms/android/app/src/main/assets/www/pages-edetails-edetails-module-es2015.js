@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header class=\"lightheader\" no-border>\n  <ion-toolbar mode=\"ios\">\n      <ion-title class=\"ion-text-capitalize\">\n        {{strings.ST115}}\n      </ion-title>\n            <ion-buttons slot=\"start\">\n              <app-backbutton color=\"dark\"></app-backbutton>\n            </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n  <app-loading *ngIf=\"isLoading\"></app-loading>\n\n  <div class=\"details\">\n\n  <img [src]=\"exercise.exercise_image | image\">\n\n  <ion-grid fixed>\n    <ion-row>\n        <ion-col size=\"4\" class=\"col-icon\">\n        <ion-icon name=\"md-list\" color=\"primary\"></ion-icon>\n        <p class=\"name\">{{strings.ST97}}</p>\n        <p class=\"value\">{{exercise.exercise_sets}}</p>\n        </ion-col>\n\n        <ion-col size=\"4\" class=\"col-icon\">\n          <ion-icon name=\"md-sync\" color=\"primary\"></ion-icon>\n          <p class=\"name\">{{strings.ST98}}</p>\n          <p class=\"value\">{{exercise.exercise_reps}}</p>\n        </ion-col>\n\n        <ion-col size=\"4\" class=\"col-icon\">\n            <ion-icon name=\"md-stopwatch\" color=\"primary\"></ion-icon>\n            <p class=\"name\">{{strings.ST99}}</p>\n            <p class=\"value\">{{exercise.exercise_rest}}</p>\n        </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n    <div class=\"tags\" (click)=toggleInfo()>\n        <h1>{{strings.ST112}}</h1>\n        <ion-icon [name]=\"isInfoHidden ? 'arrow-forward' : 'arrow-down'\" color=\"primary\" slot=\"end\"></ion-icon>\n      </div>\n    \n      <div class=\"animated fadeIn subinfo\" [hidden]=\"isInfoHidden\">\n      <p class=\"title\">{{strings.ST111}}</p>\n      <p class=\"subtitle\">{{exercise.exercise_title}}</p>\n\n      <p class=\"title\">{{strings.ST17}}</p>\n      <p class=\"subtitle\">{{exercise.level_title}}</p>\n\n      </div> \n    \n      <div class=\"tags\" (click)=toggleInstru()>\n          <h1>{{strings.ST113}}</h1>\n          <ion-icon [name]=\"isInstruHidden ? 'arrow-forward' : 'arrow-down'\" color=\"primary\" slot=\"end\"></ion-icon>\n        </div>\n      \n        <div class=\"animated fadeIn subinfo\" [hidden]=\"isInstruHidden\">\n        <app-html [htmlcontent]=\"exercise.exercise_instructions\"></app-html>\n        </div> \n\n\n        <div class=\"tags\" (click)=toggleTips()>\n            <h1>{{strings.ST114}}</h1>\n            <ion-icon [name]=\"isTipsHidden ? 'arrow-forward' : 'arrow-down'\" color=\"primary\" slot=\"end\"></ion-icon>\n          </div>\n        \n          <div class=\"animated fadeIn subinfo\" [hidden]=\"isTipsHidden\">\n          <app-html [htmlcontent]=\"exercise.exercise_tips\"></app-html>\n          </div> \n\n</div>\n\n\n</ion-content>\n\n<ion-footer mode=\"ios\" no-border>\n    <ion-button (click)=\"play()\" class=\"primary ion-text-uppercase ion-text-bold\" mode=\"ios\" expand=\"block\">\n      {{strings.ST102}}\n        <ion-icon slot=\"start\" name=\"md-arrow-dropright-circle\"></ion-icon>\n    </ion-button>\n  </ion-footer>\n"
+module.exports = "<ion-header class=\"lightheader\" no-border>\n  <ion-toolbar mode=\"ios\">\n      <ion-title class=\"ion-text-capitalize\">\n        {{strings.ST115}}\n      </ion-title>\n            <ion-buttons slot=\"start\">\n              <app-backbutton color=\"dark\"></app-backbutton>\n            </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n  <app-loading *ngIf=\"isLoading\"></app-loading>\n\n  <div class=\"details\">\n\n  <img [src]=\"exercise.exercise_image | image\">\n\n  <ion-grid fixed>\n    <ion-row>\n        <ion-col size=\"4\" class=\"col-icon\">\n        <ion-icon name=\"md-list\" color=\"primary\"></ion-icon>\n        <p class=\"name\">{{strings.ST97}}</p>\n        <p class=\"value\">{{exercise.exercise_sets}}</p>\n        </ion-col>\n\n        <ion-col size=\"4\" class=\"col-icon\">\n          <ion-icon name=\"md-sync\" color=\"primary\"></ion-icon>\n          <p class=\"name\">{{strings.ST98}}</p>\n          <p class=\"value\">{{exercise.exercise_reps}}</p>\n        </ion-col>\n\n        <ion-col size=\"4\" class=\"col-icon\">\n            <ion-icon name=\"md-stopwatch\" color=\"primary\"></ion-icon>\n            <p class=\"name\">{{strings.ST99}}</p>\n            <p class=\"value\">{{exercise.exercise_rest}}</p>\n        </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n    <div class=\"tags\" (click)=toggleInfo()>\n        <h1>{{strings.ST112}}</h1>\n        <ion-icon [name]=\"isInfoHidden ? 'arrow-forward' : 'arrow-down'\" color=\"primary\" slot=\"end\"></ion-icon>\n      </div>\n    \n      <div class=\"animated fadeIn subinfo\" [hidden]=\"isInfoHidden\">\n      <p class=\"title\">{{strings.ST111}}</p>\n      <p class=\"subtitle\">{{exercise.exercise_title}}</p>\n\n      <p class=\"title\">{{strings.ST17}}</p>\n      <p class=\"subtitle\">{{exercise.level_title}}</p>\n\n      </div> \n    \n      <div class=\"tags\" (click)=toggleInstru()>\n          <h1>{{strings.ST113}}</h1>\n          <ion-icon [name]=\"isInstruHidden ? 'arrow-forward' : 'arrow-down'\" color=\"primary\" slot=\"end\"></ion-icon>\n        </div>\n      \n        <div class=\"animated fadeIn subinfo\" [hidden]=\"isInstruHidden\">\n        <app-html [htmlcontent]=\"exercise.exercise_instructions\"></app-html>\n        </div> \n\n\n        <div class=\"tags\" (click)=toggleTips()>\n            <h1>{{strings.ST114}}</h1>\n            <ion-icon [name]=\"isTipsHidden ? 'arrow-forward' : 'arrow-down'\" color=\"primary\" slot=\"end\"></ion-icon>\n          </div>\n        \n          <div class=\"animated fadeIn subinfo\" [hidden]=\"isTipsHidden\">\n          <app-html [htmlcontent]=\"exercise.exercise_tips\"></app-html>\n          </div> \n\n</div>\n\n\n</ion-content>\n\n<ion-footer mode=\"ios\" no-border>\n    <ion-button (click)=\"play()\" class=\"primary ion-text-uppercase ion-text-bold\" mode=\"ios\" expand=\"block\">\n      {{strings.ST102}}\n        <ion-icon slot=\"start\" name=\"md-arrow-dropright-circle\"></ion-icon>\n    </ion-button>\n\t<!--div [innerHtml]=\"yt_iframe_html\"></div>\n<div [innerHtml]=\"vimeo_iframe_html\"></div>\n<div [innerHtml]=\"dm_iframe_html\"></div-->\n\t\n  </ion-footer>\n"
 
 /***/ }),
 
@@ -125,6 +125,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/streaming-media/ngx */ "./node_modules/@ionic-native/streaming-media/ngx/index.js");
 /* harmony import */ var _services_admob_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/admob.service */ "./src/app/services/admob.service.ts");
 /* harmony import */ var _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/screen-orientation/ngx */ "./node_modules/@ionic-native/screen-orientation/ngx/index.js");
+/* harmony import */ var ngx_embed_video__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-embed-video */ "./node_modules/ngx-embed-video/dist/index.js");
+/* harmony import */ var ngx_embed_video__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(ngx_embed_video__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _videoview_videoview_page__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../videoview/videoview.page */ "./src/app/pages/videoview/videoview.page.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
 
 
 
@@ -134,7 +141,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let EdetailsPage = class EdetailsPage {
-    constructor(dataService, router, route, streamingMedia, admob, screenOrientation) {
+    //yt_iframe_html: any;
+    // vimeo_iframe_html: any;
+    // dm_iframe_html: any;
+    // vimeoUrl = "https://vimeo.com/197933516";
+    // youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs";
+    // dailymotionUrl = "https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport";
+    constructor(modalController, embedService, dataService, router, route, streamingMedia, admob, screenOrientation) {
+        this.modalController = modalController;
+        this.embedService = embedService;
         this.dataService = dataService;
         this.router = router;
         this.route = route;
@@ -148,6 +163,9 @@ let EdetailsPage = class EdetailsPage {
         this.isInstruHidden = true;
         this.isTipsHidden = true;
         this.orientation = 'landscape';
+        //this.yt_iframe_html = this.embedService.embed(this.youtubeUrl);
+        // this.vimeo_iframe_html = this.embedService.embed(this.vimeoUrl);
+        // this.dm_iframe_html = this.embedService.embed(this.dailymotionUrl);
     }
     ngOnInit() {
         this.admob.HideBannerAd();
@@ -187,15 +205,27 @@ let EdetailsPage = class EdetailsPage {
         });
     }
     play() {
-        const options = {
-            successCallback: () => { console.log('Video played'); },
-            errorCallback: (e) => { console.log('Error streaming'); },
-            orientation: 'landscape',
-            shouldAutoClose: true,
-            controls: true
-        };
-        // tslint:disable-next-line: max-line-length
-        this.streamingMedia.playVideo(this.exercise.exercise_video, options);
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const modal = yield this.modalController.create({
+                component: _videoview_videoview_page__WEBPACK_IMPORTED_MODULE_9__["VideoviewPage"],
+                cssClass: 'confirmdelete',
+                componentProps: {
+                    url: this.exercise.exercise_video,
+                }
+            });
+            modal.onDidDismiss().then((detail) => {
+            });
+            return yield modal.present();
+            /*  const options: StreamingVideoOptions = {
+               successCallback: () => { console.log('Video played'); },
+               errorCallback: (e) => { console.log('Error streaming'); },
+               orientation: 'landscape',
+               shouldAutoClose: true,
+               controls: true
+             }; */
+            // tslint:disable-next-line: max-line-length
+            // this.streamingMedia.playVideo(this.exercise.exercise_video, options);
+        });
     }
     setPortrait() {
         // set to portrait
@@ -206,6 +236,8 @@ let EdetailsPage = class EdetailsPage {
     }
 };
 EdetailsPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__["ModalController"] },
+    { type: ngx_embed_video__WEBPACK_IMPORTED_MODULE_8__["EmbedVideoService"] },
     { type: _services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
@@ -219,131 +251,15 @@ EdetailsPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./edetails.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/edetails/edetails.page.html"),
         styles: [__webpack_require__(/*! ./edetails.page.scss */ "./src/app/pages/edetails/edetails.page.scss")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"],
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_10__["ModalController"],
+        ngx_embed_video__WEBPACK_IMPORTED_MODULE_8__["EmbedVideoService"],
+        _services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"],
         _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
         _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
         _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_5__["StreamingMedia"],
         _services_admob_service__WEBPACK_IMPORTED_MODULE_6__["AdmobService"],
         _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_7__["ScreenOrientation"]])
 ], EdetailsPage);
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/data.service.ts":
-/*!******************************************!*\
-  !*** ./src/app/services/data.service.ts ***!
-  \******************************************/
-/*! exports provided: DataService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/config */ "./src/app/config/config.ts");
-
-
-
-
-const Url = _config_config__WEBPACK_IMPORTED_MODULE_3__["config"].Url;
-let DataService = class DataService {
-    constructor(http) {
-        this.http = http;
-        this.page = 0;
-    }
-    ejectQuery(query) {
-        query = Url + query;
-        return this.http.get(query);
-    }
-    getDataPackages() {
-        return this.ejectQuery('/json/data_sub_plans.php?status=1');
-    }
-    getDataStrings() {
-        return this.ejectQuery('/json/data_strings.php');
-    }
-    getDataMotivation() {
-        return this.ejectQuery('/json/data_quotes.php');
-    }
-    getDataFeaturedDiets() {
-        return this.ejectQuery('/json/data_diets.php?featured=1');
-    }
-    getCount() {
-        return this.ejectQuery('/json/data_counts.php');
-    }
-    getDataCategories() {
-        return this.ejectQuery('/json/data_categories.php');
-    }
-    getDataGoals() {
-        return this.ejectQuery('/json/data_goals.php');
-    }
-    getDataLevels() {
-        return this.ejectQuery('/json/data_levels.php');
-    }
-    getDataTags() {
-        return this.ejectQuery('/json/data_tags.php');
-    }
-    getDataEquipments() {
-        return this.ejectQuery('/json/data_equipments.php');
-    }
-    getDataBodyparts() {
-        return this.ejectQuery('/json/data_bodyparts.php');
-    }
-    getDataFeaturedPosts() {
-        return this.ejectQuery('/json/data_posts.php?featured=1');
-    }
-    getDataRecentPosts(limit) {
-        return this.ejectQuery(`/json/data_posts.php?limit=${limit}`);
-    }
-    getDataWorkoutsByGoal(id) {
-        return this.ejectQuery(`/json/data_workouts.php?goal=${id}`);
-    }
-    getDataWorkoutsByLevel(id) {
-        return this.ejectQuery(`/json/data_workouts.php?level=${id}`);
-    }
-    getDataExercisesByBodypart(id) {
-        return this.ejectQuery(`/json/data_bodypart.php?id=${id}`);
-    }
-    getDataExercisesByEquipment(id) {
-        return this.ejectQuery(`/json/data_equipment.php?id=${id}`);
-    }
-    getDataDietsByCategory(id) {
-        return this.ejectQuery(`/json/data_diets.php?category=${id}`);
-    }
-    getDataPostsByTag(id) {
-        return this.ejectQuery(`/json/data_posts.php?tag=${id}`);
-    }
-    getDataExerciseById(id) {
-        return this.ejectQuery(`/json/data_exercises.php?id=${id}&limit=1`);
-    }
-    getDataWorkoutById(id) {
-        return this.ejectQuery(`/json/data_workouts.php?id=${id}&limit=1`);
-    }
-    getDataDietById(id) {
-        return this.ejectQuery(`/json/data_diets.php?id=${id}&limit=1`);
-    }
-    getDataPostById(id) {
-        return this.ejectQuery(`/json/data_posts.php?id=${id}&limit=1`);
-    }
-    getDataWorkoutExercisesByDay(id, day) {
-        return this.ejectQuery(`/json/data_days.php?id=${id}&day=${day}`);
-    }
-    poststripedetails(token, id, email) {
-        return this.ejectQuery(`/json/user_add_plan.php?token=${token}&id=${id}&email=${email}`);
-    }
-};
-DataService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-DataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
-], DataService);
 
 
 

@@ -5,11 +5,14 @@
 </ion-header-->
 <ion-content>
 <ion-header>
-  <ion-toolbar>
-		<ion-back-button text="" slot="start" defaultHref="/my-cards">
+  
+  
+  
+   <ion-toolbar>
+		<ion-back-button text="" slot="start" defaultHref="/plans">
 			<!--ion-icon name="arrow-back"></ion-icon-->
 		</ion-back-button>   
-	    <ion-title class="ion-text-center">Add New Card</ion-title>
+	    <ion-title class="ion-text-center">Add Card Details</ion-title>
   </ion-toolbar>
 </ion-header>
 	<div class="date-cont">	
@@ -98,7 +101,7 @@
 						<ion-label position="stacked">Expiry Date</ion-label>
 						<ion-row>
 						<ion-col size="4">
-						<ion-input type="number" placeholder="MM" formControlName="expMonth" maxlength="2"></ion-input> 
+						<ion-input type="text" placeholder="MM" formControlName="expMonth" maxlength="2"></ion-input> 
 						</ion-col> 
 
 						<ion-col size="2">
@@ -106,7 +109,7 @@
 						</ion-col>
 
 						<ion-col size="4">
-						<ion-input type="number" placeholder="YY" formControlName="expYear" maxlength="4"></ion-input>
+						<ion-input type="text" placeholder="YY" formControlName="expYear" maxlength="2"></ion-input>
 						</ion-col>
 						</ion-row>
 					</ion-item>
@@ -114,9 +117,14 @@
 					<div *ngIf="submitted && form.expMonth.errors" class="invalid-feedback">
 							<p class="errors" *ngIf="form.expMonth.errors.required">*Month is required!</p>
 					</div>
-			
+			        <div *ngIf="submitted && form.expMonth.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.expMonth.errors.pattern">*Month is invalid!</p>
+					</div>
 					<div *ngIf="submitted && form.expYear.errors" class="invalid-feedback">
 							<p class="errors" *ngIf="form.expYear.errors.required">*Year is required!</p>
+					</div>
+					<div *ngIf="submitted && form.expYear.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.expYear.errors.pattern">*Year is invalid!</p>
 					</div>
 
 				</ion-col>
@@ -127,7 +135,7 @@
 						<ion-label position="stacked">CVV</ion-label>
 						<ion-row>
 						<ion-col size="12">
-						<ion-input type="number" placeholder="Enter CVV"  formControlName="cvv" maxlength="4"></ion-input> 
+						<ion-input type="text"  placeholder="Enter CVV"  formControlName="cvv" maxlength="3"></ion-input> 
 						</ion-col> 
 
 					
@@ -137,7 +145,10 @@
 					<div *ngIf="submitted && form.cvv.errors" class="invalid-feedback">
 							<p class="errors" *ngIf="form.cvv.errors.required">*CVV is required!</p>
 					</div>
-			
+			<div *ngIf="submitted && form.cvv.errors" class="invalid-feedback">
+							<p class="errors" *ngIf="form.cvv.errors.pattern">*CVV is invalid!</p>
+					</div>
+
 				
 
 				</ion-col>
